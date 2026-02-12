@@ -7,18 +7,29 @@
 
 ## Implemented Features
 
-| ID         | Feature                                                                 | Prompt       | Date       | Status      |
-| ---------- | ----------------------------------------------------------------------- | ------------ | ---------- | ----------- |
-| INIT-001   | Agent-Native Scaffold                                                   | AG_Prompt_01 | 2026-02-12 | ✅ Complete |
-| UI-001     | UI Shell (Vite+React+TS + dark theme + glass panels + micro-animations) | AG_Prompt_02 | 2026-02-12 | ✅ Complete |
-| INFRA-001  | Vitest Baseline (JSDOM environment + RTB + Sanity tests)                | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
-| CORE-001   | Lead Parser v1 (Offline, regex-based, tldts-aware)                      | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
-| CORE-002   | Scoring Engine v1 (Deterministic, explainable signals)                  | AG_Prompt_04 | 2026-02-12 | ✅ Complete |
-| CORE-003   | Service Profile v1 (ICP-grounded scoring + persistence)                 | AG_Prompt_05 | 2026-02-12 | ✅ Complete |
-| CORE-004   | Run History v1 + Batch Import v1 + Exports (CSV/JSON)                   | AG_Prompt_06 | 2026-02-12 | ✅ Complete |
-| INFRA-002  | Playwright Mobile E2E Smoke + CI Artifact Reports                       | AG_Prompt_07 | 2026-02-12 | ✅ Complete |
-| DEPLOY-001 | Hosting Lane Docs + Firebase/Vercel Configs + Preview Workflows         | AG_Prompt_08 | 2026-02-12 | ✅ Complete |
-| INFRA-003  | Security Gates (CodeQL + Dependabot + Dependency Review)                | AG_Prompt_09 | 2026-02-12 | ✅ Complete |
+| ID          | Feature                                                                 | Prompt       | Date       | Status      |
+| ----------- | ----------------------------------------------------------------------- | ------------ | ---------- | ----------- |
+| INIT-001    | Agent-Native Scaffold                                                   | AG_Prompt_01 | 2026-02-12 | ✅ Complete |
+| UI-001      | UI Shell (Vite+React+TS + dark theme + glass panels + micro-animations) | AG_Prompt_02 | 2026-02-12 | ✅ Complete |
+| INFRA-001   | Vitest Baseline (JSDOM environment + RTB + Sanity tests)                | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
+| CORE-001    | Lead Parser v1 (Offline, regex-based, tldts-aware)                      | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
+| CORE-002    | Scoring Engine v1 (Deterministic, explainable signals)                  | AG_Prompt_04 | 2026-02-12 | ✅ Complete |
+| CORE-003    | Service Profile v1 (ICP-grounded scoring + persistence)                 | AG_Prompt_05 | 2026-02-12 | ✅ Complete |
+| CORE-004    | Run History v1 + Batch Import v1 + Exports (CSV/JSON)                   | AG_Prompt_06 | 2026-02-12 | ✅ Complete |
+| INFRA-002   | Playwright Mobile E2E Smoke + CI Artifact Reports                       | AG_Prompt_07 | 2026-02-12 | ✅ Complete |
+| DEPLOY-001  | Hosting Lane Docs + Firebase/Vercel Configs + Preview Workflows         | AG_Prompt_08 | 2026-02-12 | ✅ Complete |
+| INFRA-003   | Security Gates (CodeQL + Dependabot + Dependency Review)                | AG_Prompt_09 | 2026-02-12 | ✅ Complete |
+| RELEASE-001 | Launch-ready release hygiene (v0.1.0, changelog, launch checklist)      | AG_Prompt_10 | 2026-02-12 | ✅ Complete |
+
+---
+
+## RELEASE-001: Launch-Ready Operations
+
+- **Versioning**: Bumped to `v0.1.0` (MVP) in `package.json` and `.agent/VERSION.md`.
+- **Changelog**: Human-readable `CHANGELOG.md` with full feature history.
+- **Launch Strategy**: Created `.agent/LAUNCH_CHECKLIST.md` covering Vercel/Firebase lanes and post-launch QA.
+- **Release Hygiene**: Added `.github/RELEASE_TEMPLATE.md` and `.agent/RELEASING.md` runbook for tagging.
+- **Onboarding**: Updated `README.md` with clear local setup and testing instructions.
 
 ---
 

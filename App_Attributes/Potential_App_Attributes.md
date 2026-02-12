@@ -27,12 +27,14 @@
 
 ## Infrastructure
 
-| ID          | Feature             | Priority  | Description                                | Status         |
-| ----------- | ------------------- | --------- | ------------------------------------------ | -------------- |
-| INFRA-001   | Testing Framework   | 🔴 High   | Vitest setup with component and unit tests | ✅ Implemented |
-| INFRA-002   | Playwright E2E      | 🟢 Low    | End-to-end browser tests                   | ✅ Implemented |
-| INFRA-003   | Code Scanning       | 🟡 Medium | CodeQL + dependency auditing               | ✅ Implemented |
-| INFRA-004   | SBOM Generation     | 🟢 Low    | Auto-generate Software Bill of Materials   | Planned        |
-| INFRA-005   | Secret Scanning +   | 🟡 Medium | Advanced secret scanning enhancements      | Planned        |
-| RELEASE-001 | Release Automation  | 🟢 Low    | Auto-tagging and changelog generation      | Planned        |
-| UI-008      | Accessibility Check | 🟡 Medium | Automated A11y (axe) test suite            | Planned        |
+| ID          | Feature            | Priority  | Description                                | Status         |
+| ----------- | ------------------ | --------- | ------------------------------------------ | -------------- |
+| INFRA-001   | Testing Framework  | 🔴 High   | Vitest setup with component and unit tests | ✅ Implemented |
+| INFRA-002   | Playwright E2E     | 🟢 Low    | End-to-end browser tests                   | ✅ Implemented |
+| INFRA-003   | Code Scanning      | 🟡 Medium | CodeQL + dependency auditing               | ✅ Implemented |
+| INFRA-004   | SBOM Generation    | 🟢 Low    | Auto-generate Software Bill of Materials   | Planned        |
+| INFRA-005   | Secret Scanning +  | 🟡 Medium | Advanced secret scanning enhancements      | Planned        |
+| RELEASE-001 | Release Automation | 🟢 Low    | v0.1.0 + changelog + launch checklist      | ✅ Implemented |
+| UI-009      | UI Polish Pass     | 🟡 Medium | A11y + contrast + refined motion tokens    | Planned        |
+| CORE-007    | SaaS Mode          | 🔴 High   | Auth + teams + cloud storage integration   | Planned        |
+| CORE-008    | Shareable Runs     | 🟡 Medium | Unique run links with read-only views      | Planned        |
