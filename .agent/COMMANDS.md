@@ -7,10 +7,48 @@
 
 ## Available Commands
 
+### Development
+
+```bash
+npm run dev
+```
+
+**What it does:** Starts Vite dev server on `localhost:5173`.
+**When to run:** During development.
+
+### Build
+
+```bash
+npm run build
+```
+
+**What it does:** TypeScript check + Vite production build to `dist/`.
+**When to run:** Before deploying or to verify code compiles.
+
+### Preview
+
+```bash
+npm run preview
+```
+
+**What it does:** Serves the production build locally for testing.
+**When to run:** After `npm run build` to test the production bundle.
+
+### Lint
+
+```bash
+npm run lint
+```
+
+**What it does:** Runs ESLint on the project.
+**When to run:** Before committing to catch code issues.
+
 ### Repo Map Generator
 
 ```bash
-node scripts/generate_repo_map.js
+npm run repo-map
+# or directly:
+node scripts/generate_repo_map.cjs
 ```
 
 **What it does:** Scans the repo, outputs a directory tree + key files to `.agent/repo-map.md`.
@@ -20,63 +58,21 @@ node scripts/generate_repo_map.js
 
 ---
 
-### Dev Server (TODO — Not Yet Available)
+## Scripts Location
 
-```bash
-npm run dev
-```
-
-**What it does:** Starts the Vite development server.
-**When to run:** During active development.
-
-### Tests (TODO — Not Yet Available)
-
-```bash
-npm test
-```
-
-**What it does:** Runs the test suite.
-**When to run:** Before committing, during PR checks.
-
-### Lint (TODO — Not Yet Available)
-
-```bash
-npm run lint
-```
-
-**What it does:** Runs linter checks.
-**When to run:** Before committing, during PR checks.
-
-### Type Check (TODO — Not Yet Available)
-
-```bash
-npm run typecheck
-```
-
-**What it does:** Runs TypeScript type checking.
-**When to run:** Before committing, during PR checks.
-
-### Build (TODO — Not Yet Available)
-
-```bash
-npm run build
-```
-
-**What it does:** Builds production bundle.
-**When to run:** For deployment or validation.
+| Script                   | Path                            | Runtime  |
+| ------------------------ | ------------------------------- | -------- |
+| Repo Map Generator       | `scripts/generate_repo_map.cjs` | Node.js  |
+| Repo Map Generator (alt) | `scripts/generate_repo_map.py`  | Python 3 |
 
 ---
 
-## CI Workflows
+## npm Scripts Summary
 
-| Workflow | File                       | Trigger             | What It Does                          |
-| -------- | -------------------------- | ------------------- | ------------------------------------- |
-| CI       | `.github/workflows/ci.yml` | Push / PR to `main` | Lint, typecheck, test (stubs for now) |
-
----
-
-## Notes
-
-- Commands marked **TODO** will become available when the toolchain is set up.
-- All new scripts must be registered here.
-- Prefer cross-platform commands (Python, Node) over shell-specific.
+| Command            | Description                         |
+| ------------------ | ----------------------------------- |
+| `npm run dev`      | Start Vite development server       |
+| `npm run build`    | TypeScript check + production build |
+| `npm run preview`  | Preview production build            |
+| `npm run lint`     | Run ESLint                          |
+| `npm run repo-map` | Generate `.agent/repo-map.md`       |

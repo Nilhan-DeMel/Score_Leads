@@ -24,22 +24,19 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm ci || echo "No package-lock.json yet — skipping install"
+        run: npm ci
 
-      # TODO: Enable when toolchain is set up
-      # - name: Lint
-      #   run: npm run lint
+      - name: Type Check
+        run: npx tsc -b
 
-      # TODO: Enable when toolchain is set up
-      # - name: Type Check
-      #   run: npm run typecheck
+      - name: Lint
+        run: npm run lint
 
-      # TODO: Enable when toolchain is set up
-      # - name: Test
-      #   run: npm test
+      - name: Build
+        run: npm run build
 
       - name: Repo Map (validation)
-        run: node scripts/generate_repo_map.js
+        run: node scripts/generate_repo_map.cjs
 
       - name: Verify Evidence Template
         run: |

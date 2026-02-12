@@ -1,78 +1,66 @@
-# Score_Leads — Potential Features (Living SRS)
+# Potential App Attributes — Score_Leads (Planned / Not Yet Implemented)
 
-> Updated whenever an idea appears.
-> Each item must be marked with a status. This is the **Potential** features log.
-
----
-
-## Status Legend
-
-- 🔲 **Planned** — Not started yet
-- ✅ **Implemented** — Done and shipped
-- ✅ **Implemented {with changes: ...}** — Done but modified from original spec
-- ❌ **Deleted {reason: ...}** — Removed, with justification
+> Features that are identified as next steps but NOT yet built.
+> Move items to `App_Attributes.md` only after they are implemented and merged.
 
 ---
 
-## Infrastructure & Tooling
+## Core Engine
 
-| ID       | Feature                                                    | Status         | Notes                        |
-| -------- | ---------------------------------------------------------- | -------------- | ---------------------------- |
-| INIT-001 | Agent-Native Scaffold                                      | ✅ Implemented | AG_Prompt_01 — full scaffold |
-| INIT-002 | Node.js / TypeScript project init (package.json, tsconfig) | 🔲 Planned     | Next logical step            |
-| INIT-003 | ESLint + Prettier setup                                    | 🔲 Planned     | Code quality tooling         |
-| INIT-004 | Vitest / Jest test framework setup                         | 🔲 Planned     | Testing infrastructure       |
-| INIT-005 | CodeQL scanning workflow                                   | 🔲 Planned     | Security scanning            |
-| INIT-006 | Semgrep rules for JS/TS                                    | 🔲 Planned     | Custom enforcement rules     |
-| INIT-007 | Structured logging setup                                   | 🔲 Planned     | Observability                |
-
-## Core Features
-
-| ID       | Feature                                  | Status     | Notes                                                                       |
-| -------- | ---------------------------------------- | ---------- | --------------------------------------------------------------------------- |
-| CORE-001 | Lead Parser v1 (single lead)             | 🔲 Planned | Extract company name + domain from text                                     |
-| CORE-002 | Lead Parser v2 (batch/list)              | 🔲 Planned | Parse multiple leads from table/list                                        |
-| CORE-003 | Lead Parser v3 (messy text)              | 🔲 Planned | Extract entities from unstructured text                                     |
-| CORE-004 | Lead Normalizer                          | 🔲 Planned | Normalize to canonical `{ name, domain, website, source_text, confidence }` |
-| CORE-005 | Service Delivery Company Profile Builder | 🔲 Planned | Build profile from website + internal docs                                  |
-| CORE-006 | Lead Scoring Engine v1                   | 🔲 Planned | Fit signals, risk signals, score + rationale                                |
-| CORE-007 | Scoring Output Formatter                 | 🔲 Planned | Human-readable, evidence-backed results                                     |
+| ID       | Feature             | Priority  | Description                                                                     |
+| -------- | ------------------- | --------- | ------------------------------------------------------------------------------- |
+| CORE-001 | Lead Parser v1      | 🔴 High   | Extract company names, domains, and emails from unstructured text               |
+| CORE-002 | Lead Normalizer     | 🔴 High   | Deduplicate, clean, and standardize extracted lead entities                     |
+| CORE-003 | Scoring Engine v1   | 🔴 High   | Score leads by fit signals (industry, size, tech stack) and risk signals        |
+| CORE-004 | Evidence Extraction | 🟡 Medium | Extract specific evidence snippets backing each score dimension                 |
+| CORE-005 | Batch Processing    | 🟡 Medium | Process list/table of leads (CSV, pasted table, multi-line)                     |
+| CORE-006 | AI Integration      | 🟡 Medium | Connect scoring engine to LLM API for intelligent entity extraction and scoring |
+| CORE-007 | Score Explanations  | 🟡 Medium | Generate human-readable rationale for each lead's score                         |
 
 ## UI/UX
 
-| ID     | Feature                      | Status     | Notes                             |
-| ------ | ---------------------------- | ---------- | --------------------------------- |
-| UI-001 | UI Shell (Vite + dark theme) | 🔲 Planned | Mobile-first, dark theme entry    |
-| UI-002 | Single Lead Input Component  | 🔲 Planned | Form for one company              |
-| UI-003 | Batch Lead Input Component   | 🔲 Planned | Table/list input                  |
-| UI-004 | Text Paste Input Component   | 🔲 Planned | Messy text input area             |
-| UI-005 | Score Card Component         | 🔲 Planned | Display single lead score         |
-| UI-006 | Score List Component         | 🔲 Planned | Display batch results             |
-| UI-007 | Navigation (mobile-first)    | 🔲 Planned | Bottom nav or hamburger           |
-| UI-008 | Glass/liquid panel effects   | 🔲 Planned | Premium visual style              |
-| UI-009 | Micro-animations             | 🔲 Planned | Smooth transitions, hover effects |
+| ID     | Feature             | Priority  | Description                                                             |
+| ------ | ------------------- | --------- | ----------------------------------------------------------------------- |
+| UI-002 | Results Detail View | 🔴 High   | Expanded view per lead with evidence, score breakdown, and risk signals |
+| UI-003 | Score Visualization | 🟡 Medium | Radar charts, bar charts, or score breakdown rings                      |
+| UI-004 | Export Results      | 🟡 Medium | Download scored results as CSV, JSON, or markdown                       |
+| UI-005 | Onboarding Flow     | 🟢 Low    | First-run tutorial or guided walkthrough                                |
+| UI-006 | Keyboard Shortcuts  | 🟢 Low    | Power-user shortcuts (Ctrl+Enter to score, etc.)                        |
+| UI-007 | Toast Notifications | 🟡 Medium | Success/error/info toasts via Sonner or custom                          |
 
-## Authentication & Security
+## Data & Storage
 
-| ID       | Feature             | Status     | Notes                            |
-| -------- | ------------------- | ---------- | -------------------------------- |
-| AUTH-001 | User authentication | 🔲 Planned | Method TBD (Firebase Auth, etc.) |
-| AUTH-002 | API key management  | 🔲 Planned | Secure storage of API keys       |
-| AUTH-003 | Input sanitization  | 🔲 Planned | Protect against injection        |
+| ID       | Feature              | Priority  | Description                                            |
+| -------- | -------------------- | --------- | ------------------------------------------------------ |
+| DATA-001 | Local Storage Cache  | 🟡 Medium | Cache recent leads and scores in browser localStorage  |
+| DATA-002 | History / Sessions   | 🟡 Medium | Track scoring sessions with timestamps                 |
+| DATA-003 | Firebase Integration | 🟢 Low    | Cloud persistence for leads, scores, and user accounts |
 
-## Data & API
+## Auth & Security
 
-| ID       | Feature                             | Status     | Notes                       |
-| -------- | ----------------------------------- | ---------- | --------------------------- |
-| DATA-001 | Data models (TypeScript interfaces) | 🔲 Planned | Lead, Score, CompanyProfile |
-| DATA-002 | API routes (if server-based)        | 🔲 Planned | REST or tRPC                |
-| DATA-003 | Database integration                | 🔲 Planned | Storage for leads + scores  |
+| ID       | Feature        | Priority | Description                           |
+| -------- | -------------- | -------- | ------------------------------------- |
+| AUTH-001 | Authentication | 🟢 Low   | User login (Firebase Auth or similar) |
+| AUTH-002 | Rate Limiting  | 🟢 Low   | Prevent abuse of scoring API          |
 
----
+## Infrastructure
 
-## Adding New Potential Features
+| ID        | Feature              | Priority  | Description                                        |
+| --------- | -------------------- | --------- | -------------------------------------------------- |
+| INFRA-001 | Testing Framework    | 🔴 High   | Vitest setup with component and unit tests         |
+| INFRA-002 | Linting & Formatting | 🔴 High   | ESLint + Prettier fully configured and CI-enforced |
+| INFRA-003 | CodeQL Workflow      | 🟡 Medium | Security scanning in CI                            |
+| INFRA-004 | Semgrep Workflow     | 🟢 Low    | Additional security scanning                       |
+| INFRA-005 | Deployment Pipeline  | 🟡 Medium | Deploy to Firebase Hosting or similar              |
+| INFRA-006 | E2E Tests            | 🟢 Low    | Playwright or Cypress end-to-end tests             |
+| INFRA-007 | Performance Budget   | 🟢 Low    | Lighthouse CI, bundle size limits                  |
 
-1. Add a new row to the appropriate section
-2. Use the next sequential ID (e.g., CORE-008, UI-010)
-3. Status starts as 🔲 Planned
-4. Update status as work progresses
+## Advanced (Future)
+
+| ID      | Feature                | Priority  | Description                                          |
+| ------- | ---------------------- | --------- | ---------------------------------------------------- |
+| ADV-001 | Multi-language Support | 🟢 Low    | i18n for interface strings                           |
+| ADV-002 | CRM Integration        | 🟢 Low    | Push scored leads to Salesforce, HubSpot, etc.       |
+| ADV-003 | API Mode               | 🟡 Medium | REST/GraphQL API endpoint for headless scoring       |
+| ADV-004 | Webhook Notifications  | 🟢 Low    | Notify external systems when batch scoring completes |
+| ADV-005 | Custom Scoring Models  | 🟢 Low    | Let users define custom fit criteria and weights     |

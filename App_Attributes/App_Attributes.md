@@ -1,39 +1,39 @@
-# Score_Leads — Implemented Features (App Attributes)
+# App Attributes — Score_Leads (Implemented)
 
-> Updated after every completed feature.
-> This is the **Implemented** features log (SRS-in-motion).
+> Track all features/capabilities that have been **implemented** in the codebase.
+> Update this file with every prompt that adds functionality.
 
 ---
 
 ## Implemented Features
 
-### INIT-001: Agent-Native Scaffold
-
-- **Status:** ✅ Implemented
-- **Prompt:** AG_Prompt_01
-- **Date:** 2026-02-12
-- **Branch:** `init/agent-native-scaffold`
-- **Description:** Full agent-native repository scaffolding including:
-  - Agent onboarding pack (`.agent/` with START_HERE, MAP, COMMANDS, RULES, registries)
-  - Evidence Pack system (templates, naming convention, README)
-  - Repo map auto-generator script (`scripts/generate_repo_map.py`)
-  - Dev Container config (`.devcontainer/devcontainer.json`)
-  - GitHub CI workflow + PR/Issue templates
-  - VS Code extension manifest + allowlist policy
-  - Branch protection guidance document
-  - ADR (Architectural Decision Record) template + system
-- **Evidence:** `Evidence/AG_Prompt_01_InitScaffold_20260212-1211.md`
+| ID       | Feature                                                                 | Prompt       | Date       | Status      |
+| -------- | ----------------------------------------------------------------------- | ------------ | ---------- | ----------- |
+| INIT-001 | Agent-Native Scaffold                                                   | AG_Prompt_01 | 2026-02-12 | ✅ Complete |
+| UI-001   | UI Shell (Vite+React+TS + dark theme + glass panels + micro-animations) | AG_Prompt_02 | 2026-02-12 | ✅ Complete |
 
 ---
 
-## Feature Log Format
+## INIT-001: Agent-Native Scaffold
 
-```
-### FEAT-XXX: Feature Name
-- **Status:** ✅ Implemented | ✅ Implemented {with changes: ...}
-- **Prompt:** AG/KC_Prompt_XX
-- **Date:** YYYY-MM-DD
-- **Branch:** `feat/branch-name`
-- **Description:** What was built
-- **Evidence:** Evidence Pack path
-```
+- `.agent/` onboarding pack (START_HERE, MAP, COMMANDS, RULES, registries)
+- Evidence Pack system with templates and naming convention
+- Repo map auto-generator (`scripts/generate_repo_map.js`)
+- Dev Container config (Node 20 LTS)
+- GitHub CI workflow + PR/issue templates
+- VS Code extension manifest + allowlist policy
+- ADR template + decision log system
+- `.gitignore` for Node.js/TypeScript
+
+## UI-001: UI Shell
+
+- Vite + React 19 + TypeScript project scaffold
+- Tailwind CSS v4 with dark-only design tokens
+- Motion (Framer Motion) animation layer
+- Mobile-first layout with bottom navigation
+- Glass panel components with backdrop blur
+- 3 pages: Home (hero + feature cards), Lead Input (mode switcher + textarea), Results (empty state + score guide)
+- Structured JSON logger (`src/core/logging/logger.ts`)
+- Page transition animations with blur/fade
+- Ambient background glow effects
+- Inter typography via Google Fonts
