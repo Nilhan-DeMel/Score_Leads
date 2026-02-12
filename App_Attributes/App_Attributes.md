@@ -15,6 +15,22 @@
 | CORE-001  | Lead Parser v1 (Offline, regex-based, tldts-aware)                      | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
 | CORE-002  | Scoring Engine v1 (Deterministic, explainable signals)                  | AG_Prompt_04 | 2026-02-12 | ✅ Complete |
 | CORE-003  | Service Profile v1 (ICP-grounded scoring + persistence)                 | AG_Prompt_05 | 2026-02-12 | ✅ Complete |
+| CORE-004  | Run History v1 + Batch Import v1 + Exports (CSV/JSON)                   | AG_Prompt_06 | 2026-02-12 | ✅ Complete |
+
+---
+
+## CORE-004: Run History, Batch Import & Exports
+
+- **Run History:** Async persistence via IndexedDB (localForage). Each run includes a profile snapshot for reproducibility.
+- **Batch Import:**
+  - CSV Parser with auto-detecting core lead column (domain/email/company).
+  - List Parser (splitting by newline/comma/semicolon).
+  - UI: Segmented input modes (Tape, CSV Paste, File Upload, List) with real-time preview.
+- **Exports:**
+  - Results to CSV (Papa Parse unparse) containing scores, fit/intent splits, and signals.
+  - Results/Runs to JSON for external tool ingestion.
+- **UI:** History browser with quick actions (Open/Delete) and Results-viewer for historical data.
+- **Reliability:** 100% test pass for storage and import modules in Vitest.
 
 ---
 

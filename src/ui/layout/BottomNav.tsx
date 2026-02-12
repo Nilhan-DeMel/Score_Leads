@@ -1,25 +1,40 @@
 import { NavLink } from "react-router-dom";
-import { HomeIcon, InputIcon, ResultsIcon, UserIcon } from "../icons/NavIcons";
-
-const navItems = [
-  { to: "/", label: "Home", icon: HomeIcon },
-  { to: "/input", label: "Score", icon: InputIcon },
-  { to: "/results", label: "Results", icon: ResultsIcon },
-  { to: "/profile", label: "Profile", icon: UserIcon },
-] as const;
+import {
+  HomeIcon,
+  InputIcon,
+  ResultsIcon,
+  UserIcon,
+  HistoryIcon,
+} from "../icons/NavIcons";
 
 export function BottomNav() {
+  const items = [
+    { to: "/", icon: HomeIcon, label: "Home" },
+    { to: "/score", icon: InputIcon, label: "Score" },
+    { to: "/results", icon: ResultsIcon, label: "Last" },
+    { to: "/history", icon: HistoryIcon, label: "History" },
+    { to: "/profile", icon: UserIcon, label: "Profile" },
+  ];
+
   return (
-    <nav className="nav-bottom glass" aria-label="Main navigation">
-      <div className="flex items-center justify-around">
-        {navItems.map(({ to, label, icon: Icon }) => (
+    <nav className="bottom-nav">
+      <div className="flex justify-around items-center h-full px-2">
+        {items.map((item) => (
           <NavLink
-            key={to}
-            to={to}
-            className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
+            key={item.to}
+            to={item.to}
+            className={({ isActive }) =>
+              `flex flex-col items-center justify-center gap-1 flex-1 py-1 transition-all duration-300 ${
+                isActive
+                  ? "text-[var(--color-accent)] transform scale-110"
+                  : "text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)]"
+              }`
+            }
           >
-            <Icon size={20} />
-            <span>{label}</span>
+            <item.icon size={20} />
+            <span className="text-[10px] font-medium tracking-wide">
+              {item.label}
+            </span>
           </NavLink>
         ))}
       </div>
