@@ -100,6 +100,7 @@ export function ResultsPage({ mockData }: ResultsPageProps) {
                 onClick={handleExportCsv}
                 className="p-2 rounded-lg glass hover:bg-white/10 text-[var(--color-text-secondary)] transition-all"
                 title="Export CSV"
+                data-testid="export-csv-button"
               >
                 <DownloadIcon size={18} />
               </button>
@@ -107,6 +108,7 @@ export function ResultsPage({ mockData }: ResultsPageProps) {
                 onClick={handleExportJson}
                 className="p-2 rounded-lg glass hover:bg-white/10 text-[var(--color-text-secondary)] transition-all"
                 title="Export JSON"
+                data-testid="export-json-button"
               >
                 <ShareIcon size={18} />
               </button>
@@ -114,7 +116,7 @@ export function ResultsPage({ mockData }: ResultsPageProps) {
           </motion.div>
 
           {/* Leads List */}
-          <div className="space-y-4">
+          <div className="space-y-4" data-testid="results-list">
             {leads
               .sort((a, b) => b.score.total - a.score.total)
               .map((lead, idx) => (

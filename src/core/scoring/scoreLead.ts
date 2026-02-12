@@ -113,8 +113,11 @@ export function scoreLead(
   // 3. Aggregate
   let fit = 0;
   let intent = 0;
+  let hasHardExclusion = false;
 
   signals.forEach((s) => {
+    if (s.points <= -100) hasHardExclusion = true;
+
     if (
       s.id.startsWith("region") ||
       s.id.startsWith("presence") ||
@@ -129,7 +132,7 @@ export function scoreLead(
   });
 
   const totalRaw = fit + intent;
-  const total = Math.min(Math.max(totalRaw, 0), 100);
+  const total = hasHardExclusion ? -100 : Math.min(Math.max(totalRaw, 0), 100);
 
   return {
     total,

@@ -55,7 +55,7 @@ describe("Scoring Engine with Profile", () => {
     expect(
       result.signals.some((s) => s.id === "profile-exclude-internship"),
     ).toBe(true);
-    expect(result.total).toBe(0); // Large penalty should bottom it out
+    expect(result.total).toBe(-100); // Hard exclusion
   });
 
   it("should match target regions from profile TLD", () => {

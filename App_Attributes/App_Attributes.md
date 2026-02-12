@@ -16,6 +16,21 @@
 | CORE-002  | Scoring Engine v1 (Deterministic, explainable signals)                  | AG_Prompt_04 | 2026-02-12 | ✅ Complete |
 | CORE-003  | Service Profile v1 (ICP-grounded scoring + persistence)                 | AG_Prompt_05 | 2026-02-12 | ✅ Complete |
 | CORE-004  | Run History v1 + Batch Import v1 + Exports (CSV/JSON)                   | AG_Prompt_06 | 2026-02-12 | ✅ Complete |
+| INFRA-002 | Playwright Mobile E2E Smoke + CI Artifact Reports                       | AG_Prompt_07 | 2026-02-12 | ✅ Complete |
+
+---
+
+## INFRA-002: Playwright Mobile E2E Smoke Tests
+
+- **Cross-Browser Mobile Emulation:** Configured for Pixel 5 (Chrome) and iPhone 13 (Safari) plus Desktop Chromium.
+- **High-Signal Smoke Suite:**
+  - `E2E-01`: Full scoring flow verification (Input -> Process -> Results).
+  - `E2E-02`: Exclusion logic and hard-negative score validation.
+  - `E2E-03`: Real-time ICP profile update and score sensitivity.
+  - `E2E-04`: Auto-save persistence and history browsing flow.
+- **CI/CD Integration:** Wired into GitHub Actions with automated browser dependency installation.
+- **Reporting:** Automated Playwright HTML report generation and upload as CI build artifacts (30-day retention).
+- **Stability:** Instrumented app with `data-testid` attributes for non-fragile E2E selection.
 
 ---
 

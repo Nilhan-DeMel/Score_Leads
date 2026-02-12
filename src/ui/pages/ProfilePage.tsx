@@ -46,6 +46,7 @@ function TagEditor({ label, field, profile, onAdd, onRemove }: TagEditorProps) {
         <input
           type="text"
           className="input !py-2 !text-xs"
+          data-testid={`tag-input-${label.replace(/\s+/g, "-").toLowerCase()}`}
           placeholder={`Add ${label.toLowerCase()}...`}
           onKeyDown={(e) => {
             if (e.key === "Enter" && e.currentTarget.value.trim()) {
@@ -260,7 +261,11 @@ export function ProfilePage() {
           </motion.div>
 
           <motion.div variants={staggerItem} className="grid grid-cols-2 gap-3">
-            <button className="btn-primary" onClick={handleSave}>
+            <button
+              className="btn-primary"
+              onClick={handleSave}
+              data-testid="save-profile-button"
+            >
               Save Profile
             </button>
             <button className="btn-secondary" onClick={handleReset}>

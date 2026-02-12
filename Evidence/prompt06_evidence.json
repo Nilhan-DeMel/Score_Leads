@@ -1,0 +1,12 @@
+{
+  "prompt_id": "06",
+  "objective": "CORE-004 Run History v1 + Batch Import v1 + Exports (CSV/JSON)",
+  "date": "2026-02-12",
+  "status": "SUCCESS",
+  "verification": {
+    "tests_passed": 18,
+    "build": "OK",
+    "storage": "IndexedDB",
+    "parsers": ["CSV", "List", "Text"]
+  }
+}

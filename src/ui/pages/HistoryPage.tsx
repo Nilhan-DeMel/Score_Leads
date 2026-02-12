@@ -14,15 +14,15 @@ export function HistoryPage() {
   const [runs, setRuns] = useState<Partial<Run>[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    loadRuns();
-  }, []);
-
   const loadRuns = async () => {
     const data = await listRuns();
     setRuns(data);
     setLoading(false);
   };
+
+  useEffect(() => {
+    loadRuns();
+  }, []);
 
   const handleDelete = async (e: React.MouseEvent, id: string) => {
     e.stopPropagation();
@@ -78,6 +78,7 @@ export function HistoryPage() {
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
                     onClick={() => handleOpen(run.runId!)}
+                    data-testid="history-item"
                   >
                     <GlassPanel className="!p-4 flex items-center gap-4 cursor-pointer hover:border-white/20 transition-all group">
                       <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-[var(--color-accent)]">

@@ -158,6 +158,7 @@ export function LeadInputPage() {
                     setImportResults(null);
                     setInput("");
                   }}
+                  data-testid={`input-mode-${m.key}`}
                   className={`flex flex-col items-center gap-1.5 py-3 rounded-lg transition-all ${
                     mode === m.key
                       ? "bg-[var(--color-accent-subtle)] text-[var(--color-accent)]"
@@ -201,6 +202,7 @@ export function LeadInputPage() {
                   rows={8}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
+                  data-testid="lead-input-textarea"
                   placeholder={
                     mode === "text"
                       ? "Paste messy text..."
@@ -240,6 +242,7 @@ export function LeadInputPage() {
             <button
               className="btn-primary w-full py-4 rounded-xl flex items-center justify-center gap-2 group"
               onClick={handleScore}
+              data-testid="score-leads-button"
               disabled={
                 (!input.trim() && mode !== "csv_upload") || isProcessing
               }
