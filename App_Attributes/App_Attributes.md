@@ -7,16 +7,28 @@
 
 ## Implemented Features
 
-| ID        | Feature                                                                 | Prompt       | Date       | Status      |
-| --------- | ----------------------------------------------------------------------- | ------------ | ---------- | ----------- |
-| INIT-001  | Agent-Native Scaffold                                                   | AG_Prompt_01 | 2026-02-12 | ✅ Complete |
-| UI-001    | UI Shell (Vite+React+TS + dark theme + glass panels + micro-animations) | AG_Prompt_02 | 2026-02-12 | ✅ Complete |
-| INFRA-001 | Vitest Baseline (JSDOM environment + RTB + Sanity tests)                | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
-| CORE-001  | Lead Parser v1 (Offline, regex-based, tldts-aware)                      | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
-| CORE-002  | Scoring Engine v1 (Deterministic, explainable signals)                  | AG_Prompt_04 | 2026-02-12 | ✅ Complete |
-| CORE-003  | Service Profile v1 (ICP-grounded scoring + persistence)                 | AG_Prompt_05 | 2026-02-12 | ✅ Complete |
-| CORE-004  | Run History v1 + Batch Import v1 + Exports (CSV/JSON)                   | AG_Prompt_06 | 2026-02-12 | ✅ Complete |
-| INFRA-002 | Playwright Mobile E2E Smoke + CI Artifact Reports                       | AG_Prompt_07 | 2026-02-12 | ✅ Complete |
+| ID         | Feature                                                                 | Prompt       | Date       | Status      |
+| ---------- | ----------------------------------------------------------------------- | ------------ | ---------- | ----------- |
+| INIT-001   | Agent-Native Scaffold                                                   | AG_Prompt_01 | 2026-02-12 | ✅ Complete |
+| UI-001     | UI Shell (Vite+React+TS + dark theme + glass panels + micro-animations) | AG_Prompt_02 | 2026-02-12 | ✅ Complete |
+| INFRA-001  | Vitest Baseline (JSDOM environment + RTB + Sanity tests)                | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
+| CORE-001   | Lead Parser v1 (Offline, regex-based, tldts-aware)                      | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
+| CORE-002   | Scoring Engine v1 (Deterministic, explainable signals)                  | AG_Prompt_04 | 2026-02-12 | ✅ Complete |
+| CORE-003   | Service Profile v1 (ICP-grounded scoring + persistence)                 | AG_Prompt_05 | 2026-02-12 | ✅ Complete |
+| CORE-004   | Run History v1 + Batch Import v1 + Exports (CSV/JSON)                   | AG_Prompt_06 | 2026-02-12 | ✅ Complete |
+| INFRA-002  | Playwright Mobile E2E Smoke + CI Artifact Reports                       | AG_Prompt_07 | 2026-02-12 | ✅ Complete |
+| DEPLOY-001 | Hosting Lane Docs + Firebase/Vercel Configs + Preview Workflows         | AG_Prompt_08 | 2026-02-12 | ✅ Complete |
+
+---
+
+## DEPLOY-001: Multi-Lane Hosting & Previews
+
+- **Vercel Lane:** Zero-config Git integration with automatic PR previews.
+- **Firebase Lane:**
+  - `firebase.json` + `vercel.json`: Proper SPA routing rewrites to ensure direct URL navigation.
+  - GitHub Actions: `.github/workflows/firebase-hosting-preview.yml` for automated preview channels.
+  - `.agent/DEPLOY.md`: Comprehensive onboarding for live and preview deployments.
+- **Security:** Standard configuration templates (no secrets committed).
 
 ---
 

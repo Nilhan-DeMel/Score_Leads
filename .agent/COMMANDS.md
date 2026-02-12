@@ -69,10 +69,12 @@ node scripts/generate_repo_map.cjs
 
 ## npm Scripts Summary
 
-| Command            | Description                         |
-| ------------------ | ----------------------------------- |
-| `npm run dev`      | Start Vite development server       |
-| `npm run build`    | TypeScript check + production build |
-| `npm run preview`  | Preview production build            |
-| `npm run lint`     | Run ESLint                          |
-| `npm run repo-map` | Generate `.agent/repo-map.md`       |
+| Command                  | Description                         |
+| ------------------------ | ----------------------------------- |
+| `npm run dev`            | Start Vite development server       |
+| `npm run build`          | TypeScript check + production build |
+| `npm run preview`        | Preview production build            |
+| `npm run lint`           | Run ESLint                          |
+| `npm run repo-map`       | Generate `.agent/repo-map.md`       |
+| `npm run deploy:preview` | Deploy to Firebase Preview Channel  |
+| `firebase deploy`        | Deploy Live to Firebase Hosting     |

@@ -33,4 +33,4 @@
 | INFRA-002  | Playwright E2E      | 🟢 Low    | End-to-end browser tests                   | ✅ Implemented |
 | INFRA-003  | Code Scanning       | 🟡 Medium | CodeQL + dependency auditing               | Planned        |
 | UI-008     | Accessibility Check | 🟡 Medium | Automated A11y (axe) test suite            | Planned        |
-| DEPLOY-001 | Production Deploy   | 🔴 High   | Deploy to stable hosting (Vercel/Firebase) | Planned        |
+| DEPLOY-001 | Production Deploy   | 🔴 High   | Deploy to stable hosting (Vercel/Firebase) | ✅ Implemented |

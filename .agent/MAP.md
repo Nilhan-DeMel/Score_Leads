@@ -25,6 +25,8 @@
 | **Icons**                             | `src/ui/icons/NavIcons.tsx`                   | ✅ Active |
 | **Structured Logger**                 | `src/core/logging/logger.ts`                  | ✅ Active |
 | **Routing**                           | React Router v7 (`src/App.tsx`)               | ✅ Active |
+| **Deployment (Vercel)**               | `vercel.json`, `.agent/DEPLOY.md`             | ✅ Active |
+| **Deployment (Firebase)**             | `firebase.json`, `.firebaserc`, `.github/`    | ✅ Active |
 
 ---
 

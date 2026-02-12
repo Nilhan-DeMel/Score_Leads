@@ -139,14 +139,43 @@
 **Prompt:** AG_Prompt_04
 
 ### Lead Scoring Model Best Practices
+
 - **Separate Fit vs. Intent:**
   - **Fit (Firmographics):** Is this the right company? (e.g., Industry, Region, Domain strength).
   - **Intent (Engagement):** Is there current interest? (e.g., Keyword matches in source text, Contact/Pricing page mentions).
 - **Explainability:**
   - Every point must be backed by a " Signal\ (Label + Evidence snippet).
- - Use a breakdown view to show where points came from. This builds trust with sales users.
+- Use a breakdown view to show where points came from. This builds trust with sales users.
 - **Deterministic & Modular:**
- - Pure functions for individual rules make debugging and testing easier.
- - No side effects (network calls) during the scoring pass.
+- Pure functions for individual rules make debugging and testing easier.
+- No side effects (network calls) during the scoring pass.
 - **Confidence Layer:**
- - Signals from verified sources (URLs/Emails) weigh more than heuristic bare-text matches.
+- Signals from verified sources (URLs/Emails) weigh more than heuristic bare-text matches.
+
+---
+
+## 8. DEPLOY-001: Vite Static Deploy + Preview URLs
+
+**Generated:** 2026-02-12 via `google-developer-knowledge` MCP
+**Ref:** `firebase.google.com/docs/hosting/github-integration`
+
+### Key Takeaways
+
+1. **Vite Static Output:**
+   - Default build directory is `dist/`.
+   - Requires SPA routing logic (rewrites) to prevent 404s on browser refresh.
+
+2. **Vercel Lane:**
+   - **Trigger:** Automatic building on PR push via Vercel GitHub App.
+   - **Routing:** Handled via `vercel.json` with `{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}`.
+   - **Pros:** Zero config for Vite; extremely fast preview URLs.
+
+3. **Firebase Lane:**
+   - **Trigger:** Handled via `FirebaseExtended/action-hosting-deploy`.
+   - **Configuration:** `firebase.json` must map all non-static requests to `index.html`.
+   - **Preview Channels:** Temporary URLs like `PROJECT_ID--CHANNEL_ID-HASH.web.app`.
+   - **Expiration:** Channels expire after 7 days by default.
+
+4. **SPA Security:**
+   - Headers should ideally include `X-Content-Type-Options: nosniff`.
+   - Routing must ensure `index.html` is served for all client-side routes.
