@@ -7,10 +7,36 @@
 
 ## Implemented Features
 
-| ID       | Feature                                                                 | Prompt       | Date       | Status      |
-| -------- | ----------------------------------------------------------------------- | ------------ | ---------- | ----------- |
-| INIT-001 | Agent-Native Scaffold                                                   | AG_Prompt_01 | 2026-02-12 | ✅ Complete |
-| UI-001   | UI Shell (Vite+React+TS + dark theme + glass panels + micro-animations) | AG_Prompt_02 | 2026-02-12 | ✅ Complete |
+| ID        | Feature                                                                 | Prompt       | Date       | Status      |
+| --------- | ----------------------------------------------------------------------- | ------------ | ---------- | ----------- |
+| INIT-001  | Agent-Native Scaffold                                                   | AG_Prompt_01 | 2026-02-12 | ✅ Complete |
+| UI-001    | UI Shell (Vite+React+TS + dark theme + glass panels + micro-animations) | AG_Prompt_02 | 2026-02-12 | ✅ Complete |
+| INFRA-001 | Vitest Baseline (JSDOM environment + RTB + Sanity tests)                | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
+| CORE-001  | Lead Parser v1 (Offline, regex-based, tldts-aware)                      | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
+
+---
+
+## INFRA-001: Vitest Baseline
+
+- Vitest integrated into Vite configuration
+- JSDOM environment for browser API emulation
+- `@testing-library/react` and `@testing-library/jest-dom` for component testing
+- `globals: true` with implicit/explicit support
+- Sanity tests for UI (HomePage) and pure logic
+- npm scripts: `test` (run) and `test:watch` (dev)
+
+## CORE-001: Lead Parser v1
+
+- Deterministic, offline extraction engine
+- Micro-modular architecture (Extractors -> Normalization -> Deduper)
+- Email extraction via regex
+- URL/Domain extraction via regex
+- Bare domain heuristic extraction (negative lookbehind)
+- Public-Suffix awareness using `tldts` (e.g. `co.uk` handling)
+- Company name heuristics (Title Case labels)
+- Deduping logic with confidence scoring
+- Orchestrator returning structured `ParseResult`
+- Comprehensive unit tests (100% pass)
 
 ---
 

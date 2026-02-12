@@ -1,13 +1,15 @@
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { PageTransition } from "../motion/PageTransition";
 import { GlassPanel } from "../components/GlassPanel";
 import { staggerContainer, staggerItem } from "../motion/presets";
-import { EmptyStateIcon, SparkleIcon } from "../icons/NavIcons";
+import { EmptyStateIcon, SparkleIcon, GlobeIcon } from "../icons/NavIcons";
+import type { LeadCompanyProfile } from "../../core/leads/types";
 
 export function ResultsPage() {
-  // Placeholder: no results yet
-  const hasResults = false;
+  const location = useLocation();
+  const leads = (location.state?.leads || []) as LeadCompanyProfile[];
+  const hasResults = leads.length > 0;
 
   return (
     <PageTransition>
@@ -32,37 +34,49 @@ export function ResultsPage() {
           </motion.div>
 
           {hasResults ? (
-            /* Placeholder result cards for future */
+            /* Real lead cards */
             <div className="space-y-3">
-              {[1, 2, 3].map((i) => (
-                <GlassPanel key={i} delay={i * 0.1}>
-                  <div className="flex items-center justify-between">
-                    <div>
+              {leads.map((lead, i) => (
+                <GlassPanel key={lead.id} delay={i * 0.05}>
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex-1 min-w-0">
                       <div
-                        className="text-sm font-semibold"
+                        className="text-sm font-semibold truncate"
                         style={{ color: "var(--color-text-primary)" }}
                       >
-                        Company {i}
+                        {lead.name}
                       </div>
-                      <div
-                        className="text-xs mt-1"
-                        style={{ color: "var(--color-text-secondary)" }}
-                      >
-                        company{i}.com
+                      <div className="flex items-center gap-2 mt-1">
+                        <GlobeIcon size={12} className="opacity-50" />
+                        <div
+                          className="text-xs truncate"
+                          style={{ color: "var(--color-text-secondary)" }}
+                        >
+                          {lead.domain}
+                        </div>
                       </div>
+                      {lead.confidence < 0.8 && (
+                        <div className="mt-2 text-[0.625rem] opacity-60 flex gap-1 items-center">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-amber)]" />
+                          <span>
+                            Heuristic match ({Math.round(lead.confidence * 100)}
+                            % confidence)
+                          </span>
+                        </div>
+                      )}
                     </div>
-                    <div className="text-right">
+                    <div className="text-right shrink-0">
                       <div
                         className="text-lg font-bold"
-                        style={{ color: "var(--color-accent)" }}
+                        style={{ color: "var(--color-text-ghost)" }}
                       >
-                        {85 - i * 10}
+                        —
                       </div>
                       <div
                         className="text-[0.625rem] uppercase tracking-wider"
                         style={{ color: "var(--color-text-muted)" }}
                       >
-                        Score
+                        Pending
                       </div>
                     </div>
                   </div>

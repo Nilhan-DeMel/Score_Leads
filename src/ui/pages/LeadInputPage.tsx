@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 import { PageTransition } from "../motion/PageTransition";
 import { GlassPanel } from "../components/GlassPanel";
 import { staggerContainer, staggerItem } from "../motion/presets";
 import { SparkleIcon } from "../icons/NavIcons";
 import { logger } from "../../core/logging/logger";
+import { parseLeadText } from "../../core/leads/parseLeadText";
 
 type InputMode = "single" | "batch" | "text";
 
@@ -15,6 +17,7 @@ const modes: { key: InputMode; label: string; desc: string }[] = [
 ];
 
 export function LeadInputPage() {
+  const navigate = useNavigate();
   const [mode, setMode] = useState<InputMode>("text");
   const [input, setInput] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
@@ -27,11 +30,21 @@ export function LeadInputPage() {
     });
     setIsProcessing(true);
 
-    // Placeholder: simulate processing
+    // Simulate short processing delay
     setTimeout(() => {
+      const result = parseLeadText(input);
       setIsProcessing(false);
-      logger.info("LeadInputPage", "score_complete", { mode });
-    }, 1500);
+      logger.info("LeadInputPage", "score_complete", {
+        mode,
+        leadsFound: result.stats.total_found,
+        deduped: result.stats.deduped_count,
+      });
+
+      // Navigate to results with the parsed leads
+      navigate("/results", {
+        state: { leads: result.leads, stats: result.stats },
+      });
+    }, 800);
   };
 
   return (

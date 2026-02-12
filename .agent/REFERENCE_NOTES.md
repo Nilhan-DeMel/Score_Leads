@@ -74,6 +74,27 @@
 
 ---
 
+## 5. CORE-001 + INFRA-001: Vitest & Domain Parsing
+
+**Generated:** 2026-02-12 via `google-developer-knowledge` MCP
+**Prompt:** AG_Prompt_03
+
+### Vitest Setup (Vite React TS)
+
+- **Environment:** Use `jsdom` for emulating browser APIs (DOM, window) without a full browser.
+- **Setup File:** Use a setup file (e.g., `src/setupTests.ts`) to import `@testing-library/jest-dom` matchers for better assertions (e.g., `toBeInTheDocument`).
+- **globals:** Enable `globals: true` in Vitest config to use `test`, `expect`, `describe` without explicit imports.
+- **Architecture:** Keep business logic pure and separate from rendering to make it testable in any environment.
+
+### Public Suffix / Domain Parsing
+
+- **eTLD (Effective Top-Level Domain):** Use the Public Suffix List (PSL) to correctly identify registrable domains (e.g., `acme.co.uk` vs `uk`).
+- **Library:** Prefer `tldts` for domain parsing. It is lightweight, performs well, and handles the PSL correctly.
+- **Normalization:** Normalize URLs/domains before parsing (lowercase, trim, remove scheme/path).
+- **Confidence Scoring:** Valid URLs or email-derived domains have higher confidence than bare text strings.
+
+---
+
 ## 4. UI-001: Vite + React + TypeScript + Tailwind + Motion
 
 **Generated:** 2026-02-12 via `google-developer-knowledge` MCP + general knowledge
