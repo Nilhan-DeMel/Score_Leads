@@ -1,0 +1,32 @@
+{
+  "prompt_id": "03",
+  "title": "INFRA-001 (Vitest) + CORE-001 (Lead Parser v1)",
+  "date": "2026-02-12",
+  "branch": "core/core-001-parser-v1",
+  "status": "Success",
+  "files_changed": [
+    "package.json",
+    "vite.config.ts",
+    "src/setupTests.ts",
+    "src/App.test.tsx",
+    "src/core/leads/types.ts",
+    "src/core/leads/extractEmails.ts",
+    "src/core/leads/extractUrls.ts",
+    "src/core/leads/extractBareDomains.ts",
+    "src/core/leads/normalizeDomain.ts",
+    "src/core/leads/guessCompanyName.ts",
+    "src/core/leads/dedupeLeads.ts",
+    "src/core/leads/parseLeadText.ts",
+    "src/core/leads/__tests__/parser.test.ts",
+    "src/ui/pages/LeadInputPage.tsx",
+    "src/ui/pages/ResultsPage.tsx",
+    "src/ui/icons/NavIcons.tsx",
+    "App_Attributes/App_Attributes.md",
+    "App_Attributes/Potential_App_Attributes.md"
+  ],
+  "verification": {
+    "unit_tests": "7 passed",
+    "build": "Success",
+    "tsc": "Zero errors"
+  }
+}
