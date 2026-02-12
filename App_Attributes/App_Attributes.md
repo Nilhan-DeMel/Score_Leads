@@ -13,6 +13,8 @@
 | UI-001    | UI Shell (Vite+React+TS + dark theme + glass panels + micro-animations) | AG_Prompt_02 | 2026-02-12 | ✅ Complete |
 | INFRA-001 | Vitest Baseline (JSDOM environment + RTB + Sanity tests)                | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
 | CORE-001  | Lead Parser v1 (Offline, regex-based, tldts-aware)                      | AG_Prompt_03 | 2026-02-12 | ✅ Complete |
+| CORE-002  | Scoring Engine v1 (Deterministic, explainable signals)                  | AG_Prompt_04 | 2026-02-12 | ✅ Complete |
+| CORE-003  | Service Profile v1 (ICP-grounded scoring + persistence)                 | AG_Prompt_05 | 2026-02-12 | ✅ Complete |
 
 ---
 
@@ -63,3 +65,22 @@
 - Page transition animations with blur/fade
 - Ambient background glow effects
 - Inter typography via Google Fonts
+
+---
+
+## CORE-002: Scoring Engine v1
+
+- Deterministic, offline rule engine
+- Explainable signal architecture: Points + Signal Label + Evidence Snippet
+- Rules: Region (TLD based), Intent (Keyword based), Presence (Website/Email), Penalty (.gov/.edu)
+- UI: Expandable scoring breakdown cards ("Why this score?")
+- Structured logging for scoring performance
+
+---
+
+## CORE-003: Service Delivery Company Profile v1
+
+- Service profile model with schema versioning ("1.0.0")
+- LocalStorage persistence layer with Import/Export (JSON)
+- Profile-driven scoring signals (Tech, Industry, Region, Hard Negatives)
+- UI: Profile Builder with tag editing and offline keyword suggestions

@@ -9,6 +9,7 @@ export interface LeadCompanyProfile {
   source_text: string; // Excerpt/snippet where it was found
   confidence: number; // 0.0 to 1.0
   id: string; // Generated hash or unique ID
+  method: "URL" | "EMAIL" | "BARE"; // Extraction method
 }
 
 export interface ParseResult {

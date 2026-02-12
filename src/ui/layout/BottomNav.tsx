@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
-import { HomeIcon, InputIcon, ResultsIcon } from "../icons/NavIcons";
+import { HomeIcon, InputIcon, ResultsIcon, UserIcon } from "../icons/NavIcons";
 
 const navItems = [
   { to: "/", label: "Home", icon: HomeIcon },
   { to: "/input", label: "Score", icon: InputIcon },
   { to: "/results", label: "Results", icon: ResultsIcon },
+  { to: "/profile", label: "Profile", icon: UserIcon },
 ] as const;
 
 export function BottomNav() {

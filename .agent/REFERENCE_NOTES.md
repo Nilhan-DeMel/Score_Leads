@@ -130,3 +130,23 @@
 - Evaluated but not installed in UI-001 to keep the dependency surface small
 - Can be added later via `npx shadcn@latest init` if needed
 - Requires Tailwind CSS configured first (which is done)
+
+---
+
+## 6. CORE-002: Scoring Engine v1
+
+**Generated:** 2026-02-12 via google-developer-knowledge MCP
+**Prompt:** AG_Prompt_04
+
+### Lead Scoring Model Best Practices
+- **Separate Fit vs. Intent:**
+  - **Fit (Firmographics):** Is this the right company? (e.g., Industry, Region, Domain strength).
+  - **Intent (Engagement):** Is there current interest? (e.g., Keyword matches in source text, Contact/Pricing page mentions).
+- **Explainability:**
+  - Every point must be backed by a " Signal\ (Label + Evidence snippet).
+ - Use a breakdown view to show where points came from. This builds trust with sales users.
+- **Deterministic & Modular:**
+ - Pure functions for individual rules make debugging and testing easier.
+ - No side effects (network calls) during the scoring pass.
+- **Confidence Layer:**
+ - Signals from verified sources (URLs/Emails) weigh more than heuristic bare-text matches.

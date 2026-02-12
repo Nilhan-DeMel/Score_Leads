@@ -4,6 +4,7 @@ import { AppShell } from "./ui/layout/AppShell";
 import { HomePage } from "./ui/pages/HomePage";
 import { LeadInputPage } from "./ui/pages/LeadInputPage";
 import { ResultsPage } from "./ui/pages/ResultsPage";
+import { ProfilePage } from "./ui/pages/ProfilePage";
 
 export default function App() {
   const location = useLocation();
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/input" element={<LeadInputPage />} />
           <Route path="/results" element={<ResultsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </AnimatePresence>
     </AppShell>

@@ -7,6 +7,9 @@ import { staggerContainer, staggerItem } from "../motion/presets";
 import { SparkleIcon } from "../icons/NavIcons";
 import { logger } from "../../core/logging/logger";
 import { parseLeadText } from "../../core/leads/parseLeadText";
+import { scoreLead } from "../../core/scoring/scoreLead";
+import { defaultScoringConfig } from "../../core/scoring/config/defaultScoringConfig";
+import { loadProfile } from "../../core/profile/storage/loadProfile";
 
 type InputMode = "single" | "batch" | "text";
 
@@ -32,17 +35,35 @@ export function LeadInputPage() {
 
     // Simulate short processing delay
     setTimeout(() => {
-      const result = parseLeadText(input);
+      const { leads, stats } = parseLeadText(input);
+
+      // Score each lead
+      const activeProfile = loadProfile();
+      const scoredLeads = leads.map((lead) => ({
+        ...lead,
+        score: scoreLead(
+          lead,
+          defaultScoringConfig,
+          activeProfile,
+          lead.source_text,
+        ),
+      }));
+
       setIsProcessing(false);
       logger.info("LeadInputPage", "score_complete", {
         mode,
-        leadsFound: result.stats.total_found,
-        deduped: result.stats.deduped_count,
+        leadsFound: stats.total_found,
+        deduped: stats.deduped_count,
+        avgScore:
+          scoredLeads.length > 0
+            ? scoredLeads.reduce((acc, l) => acc + l.score.total, 0) /
+              scoredLeads.length
+            : 0,
       });
 
-      // Navigate to results with the parsed leads
+      // Navigate to results with the scored leads
       navigate("/results", {
-        state: { leads: result.leads, stats: result.stats },
+        state: { leads: scoredLeads, stats },
       });
     }, 800);
   };

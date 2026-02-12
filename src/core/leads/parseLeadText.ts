@@ -21,12 +21,15 @@ export function parseLeadText(text: string): ParseResult {
   const bareDomains = extractBareDomains(text);
 
   // Helper to add lead
-  const addLead = (raw: string, confidence: number) => {
+  const addLead = (
+    raw: string,
+    confidence: number,
+    method: "URL" | "EMAIL" | "BARE",
+  ) => {
     const domain = normalizeDomain(raw);
     if (!domain) return;
 
-    // v1: Simple excerpt (last 30 chars or first 30 around match)
-    // For now, just use the raw match as source_text preview
+    // v1: Simple excerpt
     const sourceText = raw.length > 50 ? raw.slice(0, 47) + "..." : raw;
 
     leads.push({
@@ -39,13 +42,14 @@ export function parseLeadText(text: string): ParseResult {
           : `https://${domain}`,
       source_text: sourceText,
       confidence,
+      method,
     });
   };
 
   // 2. Process with confidence weights
-  urls.forEach((url) => addLead(url, 1.0));
-  emails.forEach((email) => addLead(email, 0.8));
-  bareDomains.forEach((domain) => addLead(domain, 0.4));
+  urls.forEach((url) => addLead(url, 1.0, "URL"));
+  emails.forEach((email) => addLead(email, 0.8, "EMAIL"));
+  bareDomains.forEach((domain) => addLead(domain, 0.4, "BARE"));
 
   // 3. Dedupe
   const dedupedLeads = dedupeLeads(leads);
