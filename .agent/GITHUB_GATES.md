@@ -19,11 +19,11 @@
 
 ### Required Status Checks
 
-| Check     | Workflow                        | Status     |
-| --------- | ------------------------------- | ---------- |
-| `ci`      | `.github/workflows/ci.yml`      | ✅ Active  |
-| `codeql`  | `.github/workflows/codeql.yml`  | 🔲 Planned |
-| `semgrep` | `.github/workflows/semgrep.yml` | 🔲 Planned |
+| Check               | Workflow                                  | Status    |
+| ------------------- | ----------------------------------------- | --------- |
+| `ci`                | `.github/workflows/ci.yml`                | ✅ Active |
+| `CodeQL`            | `.github/workflows/codeql.yml`            | ✅ Active |
+| `Dependency Review` | `.github/workflows/dependency-review.yml` | ✅ Active |
 
 ---
 
@@ -37,7 +37,7 @@
    - ✅ Dismiss stale pull request approvals when new commits are pushed
    - ✅ Require conversation resolution before merging
    - ✅ Require status checks to pass before merging
-   - Select: `ci` workflow
+   - Select: `ci`, `Analyze (javascript-typescript)`, `dependency-review`
 4. Click **Save changes**
 
 ---

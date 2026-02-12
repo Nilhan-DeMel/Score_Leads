@@ -1,0 +1,8 @@
+{
+  "prompt_id": "08",
+  "feature": "DEPLOY-001 Hosting + Previews",
+  "date": "2026-02-12",
+  "status": "success",
+  "lanes": ["Vercel", "Firebase Hosting"],
+  "artifacts": ["AG_Prompt_08_DEPLOY001_20260212.md", "PROMPT#08.zip"]
+}

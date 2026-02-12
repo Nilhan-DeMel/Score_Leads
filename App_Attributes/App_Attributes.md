@@ -18,6 +18,16 @@
 | CORE-004   | Run History v1 + Batch Import v1 + Exports (CSV/JSON)                   | AG_Prompt_06 | 2026-02-12 | ✅ Complete |
 | INFRA-002  | Playwright Mobile E2E Smoke + CI Artifact Reports                       | AG_Prompt_07 | 2026-02-12 | ✅ Complete |
 | DEPLOY-001 | Hosting Lane Docs + Firebase/Vercel Configs + Preview Workflows         | AG_Prompt_08 | 2026-02-12 | ✅ Complete |
+| INFRA-003  | Security Gates (CodeQL + Dependabot + Dependency Review)                | AG_Prompt_09 | 2026-02-12 | ✅ Complete |
+
+---
+
+## INFRA-003: Security Gates
+
+- **Code Scanning**: `.github/workflows/codeql.yml` tracks JS/TS vulnerabilities via GitHub CodeQL.
+- **Dependency Health**: `.github/dependabot.yml` automates npm and GitHub Actions updates with weekly grouping.
+- **PR Security Barrier**: `.github/workflows/dependency-review.yml` blocks PRs introducing high/critical vulnerabilities.
+- **Documentation**: `.agent/SECURITY.md` provides a response playbook for security findings.
 
 ---
 

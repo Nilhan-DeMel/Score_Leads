@@ -176,6 +176,31 @@
    - **Preview Channels:** Temporary URLs like `PROJECT_ID--CHANNEL_ID-HASH.web.app`.
    - **Expiration:** Channels expire after 7 days by default.
 
-4. **SPA Security:**
-   - Headers should ideally include `X-Content-Type-Options: nosniff`.
-   - Routing must ensure `index.html` is served for all client-side routes.
+- **Security:** Standard configuration templates (no secrets committed).
+
+---
+
+## 9. INFRA-003: Security Gates (CodeQL + Dependabot + Dependency Review)
+
+**Generated:** 2026-02-12 via `google-developer-knowledge` MCP
+**Ref:** `github.com/github/codeql-action`
+
+### Key Takeaways
+
+1. **CodeQL (Static Analysis):**
+   - **Languages:** Focus on `javascript-typescript`.
+   - **Triggers:** Push to `main`, Pull Request to `main`, and weekly schedule.
+   - **Query Suite:** Target `security-extended` or `security-and-quality`.
+
+2. **Dependabot (Dependency Updates):**
+   - **Ecosystems:** `npm` and `github-actions`.
+   - **Interval:** `weekly`.
+   - **Grouping:** Use `groups` to bundle minor/patch updates.
+
+3. **Dependency Review (PR Blocking):**
+   - **Function:** Scans PRs for new dependencies with known vulnerabilities.
+   - **Severity:** Block on `high` or `critical` severity.
+
+4. **Integration Policy:**
+   - Security checks should be **Required Status Checks** in GitHub.
+   - Failures must be addressed (fix/risk-accept) before merging.
