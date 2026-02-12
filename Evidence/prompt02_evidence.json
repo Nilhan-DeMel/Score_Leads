@@ -1,0 +1,82 @@
+{
+  "prompt_id": "AG_Prompt_02",
+  "branch": "ui/ui-001-shell",
+  "commit": "53cab7a",
+  "merge_commit": "2d8c697",
+  "pr_url": "https://github.com/Nilhan-DeMel/Score_Leads/pull/2",
+  "summary": "UI-001: Mobile-first dark UI shell with Vite 7 + React 19 + TypeScript + Tailwind CSS v4 + Motion v12. Glass panels, micro-animations, 3 pages (Home, LeadInput, Results), structured logger, bottom navigation.",
+  "date": "2026-02-12",
+  "agent": "Antigravity",
+  "files_changed": [
+    "package.json",
+    "package-lock.json",
+    "vite.config.ts",
+    "tsconfig.json",
+    "tsconfig.app.json",
+    "tsconfig.node.json",
+    "eslint.config.js",
+    "index.html",
+    "public/vite.svg",
+    "src/main.tsx",
+    "src/App.tsx",
+    "src/index.css",
+    "src/vite-env.d.ts",
+    "src/core/logging/logger.ts",
+    "src/ui/layout/AppShell.tsx",
+    "src/ui/layout/BottomNav.tsx",
+    "src/ui/components/GlassPanel.tsx",
+    "src/ui/motion/PageTransition.tsx",
+    "src/ui/motion/presets.ts",
+    "src/ui/icons/NavIcons.tsx",
+    "src/ui/pages/HomePage.tsx",
+    "src/ui/pages/LeadInputPage.tsx",
+    "src/ui/pages/ResultsPage.tsx",
+    ".agent/UI_THEME.md",
+    ".agent/COMMANDS.md",
+    ".agent/MAP.md",
+    ".agent/REFERENCE_NOTES.md",
+    ".agent/repo-map.md",
+    ".github/workflows/ci.yml",
+    "App_Attributes/App_Attributes.md",
+    "App_Attributes/Potential_App_Attributes.md",
+    "Evidence/AG_TaskRubric_02.md",
+    "scripts/generate_repo_map.cjs"
+  ],
+  "commands_run": [
+    "npx -y create-vite@latest temp-vite --template react-ts --no-interactive",
+    "npm install",
+    "npx tsc -b",
+    "npm run build",
+    "npm run dev",
+    "node scripts/generate_repo_map.cjs",
+    "git add -A",
+    "git commit",
+    "git push -u origin ui/ui-001-shell",
+    "gh pr create",
+    "gh pr merge 2 --merge --admin"
+  ],
+  "tests_run": [
+    { "test": "TypeScript check (tsc -b)", "result": "pass" },
+    {
+      "test": "Vite production build",
+      "result": "pass",
+      "output": "363.91 KB, built in 978ms"
+    },
+    {
+      "test": "Dev server startup",
+      "result": "pass",
+      "output": "333ms on port 5173"
+    },
+    { "test": "Repo map generator", "result": "pass" },
+    {
+      "test": "Unit tests",
+      "result": "not_available",
+      "reason": "Vitest not yet set up (INFRA-001)"
+    }
+  ],
+  "risks": [
+    "No unit test framework yet",
+    "Browser verification skipped (Playwright not available)"
+  ],
+  "rollback": "git revert 2d8c697 OR git reset --hard 359476c && git push -f origin main"
+}

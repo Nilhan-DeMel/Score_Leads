@@ -1,0 +1,82 @@
+# Trajectory Log — AG_Prompt_02
+
+## Timestamp: 2026-02-12 12:38 IST
+
+### Step 0: Pre-flight
+1. Confirmed repo on `main`, clean working tree
+2. `git pull origin main` — already up to date
+3. Verified scaffold from Prompt#01 intact (.agent/, Evidence/, etc.)
+4. Created branch `ui/ui-001-shell`
+
+### Step 1: MCP Grounding
+1. Queried `google-developer-knowledge` for Vite, Tailwind v4, Motion
+2. MCP returned limited frontend results (GCP-focused corpus)
+3. Used agent knowledge for Vite/Tailwind/Motion setup patterns
+4. Appended UI-001 section to `.agent/REFERENCE_NOTES.md`
+
+### Step 2: Frontend Scaffold
+1. Ran `npx create-vite@latest temp-vite --template react-ts`
+2. Copied scaffold files to repo root
+3. Removed temp directory
+4. Updated package.json with project name, deps, scripts
+5. Decision: Root = Vite app (Option A) for simplicity
+
+### Step 3: Tailwind + Theme Tokens
+1. Added `tailwindcss` + `@tailwindcss/vite` to devDependencies
+2. Added `tailwindcss()` to vite.config.ts plugins
+3. Created dark-only design token system in `src/index.css` via `@theme {}`
+4. Created `.agent/UI_THEME.md` with full color documentation
+5. No light theme. No tailwind.config.js (v4 uses CSS @theme).
+
+### Step 4: shadcn/ui
+1. Evaluated: would add complexity for minimal gain at this stage
+2. Decision: SKIP (prompt says "OPTIONAL BUT RECOMMENDED")
+3. Custom glass components are more on-brand for the dark glass aesthetic
+
+### Step 5: Animation Layer
+1. Added `motion` (Framer Motion v12) to dependencies
+2. Created `src/ui/motion/PageTransition.tsx` — blur+fade+slide
+3. Created `src/ui/motion/presets.ts` — stagger, scale-in, pulse glow
+4. Integrated AnimatePresence in App.tsx for route transitions
+
+### Step 6: UI Shell Pages
+1. Created `src/ui/layout/AppShell.tsx` — shell with ambient BG
+2. Created `src/ui/layout/BottomNav.tsx` — glass bottom nav
+3. Created `src/ui/components/GlassPanel.tsx` — glass card component
+4. Created `src/ui/icons/NavIcons.tsx` — custom SVG icons
+5. Created `src/ui/pages/HomePage.tsx` — hero + feature cards + stats
+6. Created `src/ui/pages/LeadInputPage.tsx` — mode switcher + input
+7. Created `src/ui/pages/ResultsPage.tsx` — empty state + score guide
+8. React Router v7 with 3 routes (/, /input, /results)
+
+### Step 7: Observability
+1. Created `src/core/logging/logger.ts`
+2. Fields: run_id, view, action, ts, level, data
+3. Used in HomePage CTA click, LeadInputPage mode switch + score click
+
+### Step 8: Doc Updates
+1. Updated `App_Attributes/App_Attributes.md` — added UI-001
+2. Updated `App_Attributes/Potential_App_Attributes.md` — 25+ features
+3. Updated `.agent/MAP.md` — all new paths and entry points
+4. Updated `.agent/COMMANDS.md` — all npm scripts
+5. Updated `.github/workflows/ci.yml` — real build steps
+
+### Step 9: Quality Checks
+1. `npm install` — 201 packages, 0 vulnerabilities
+2. `npx tsc -b` — zero errors
+3. `npm run build` — success (448 modules, 978ms)
+4. `npm run dev` — starts in 333ms
+5. `node scripts/generate_repo_map.cjs` — generates 111-line map
+6. Browser test skipped (Playwright env issue)
+
+### Step 10: Commit / PR / Merge
+1. Committed 33 files on branch `ui/ui-001-shell`
+2. Pushed to origin
+3. Created PR #2
+4. Merged via `gh pr merge 2 --merge --admin`
+5. Pulled main — confirmed at `2d8c697`
+
+### Step 11: Evidence Pack
+1. Created `Evidence/AG_Prompt_02_UI001_20260212-1238.md`
+2. Created supporting files for PROMPT#02.zip
+3. Created PROMPT#02.zip

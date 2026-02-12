@@ -1,0 +1,75 @@
+# Commands Log — AG_Prompt_02
+
+## Timestamp: 2026-02-12 12:38 IST
+
+### Pre-flight
+```
+$ git status
+On branch main, clean
+
+$ git pull origin main
+Already up to date.
+```
+
+### Scaffold
+```
+$ npx -y create-vite@latest temp-vite --template react-ts --no-interactive
+✓ Scaffolding project in D:\...\temp-vite...
+```
+
+### Install
+```
+$ npm install
+added 201 packages, 0 vulnerabilities (26s)
+```
+
+### TypeScript
+```
+$ npx tsc -b
+(zero errors, zero output)
+```
+
+### Build
+```
+$ npm run build
+vite v7.3.1 building for production...
+✓ 448 modules transformed
+dist/index.html       1.02 kB │ gzip: 0.53 kB
+dist/assets/index.css 0.91 kB │ gzip: 0.49 kB
+dist/assets/index.js  363.91 kB │ gzip: 117.17 kB
+✓ built in 978ms
+```
+
+### Dev Server
+```
+$ npm run dev
+VITE v7.3.1 ready in 333 ms
+Local: http://localhost:5173/
+```
+
+### Repo Map
+```
+$ node scripts/generate_repo_map.cjs
+✅ Repo map generated
+```
+
+### Git
+```
+$ git add -A
+(33 files staged)
+
+$ git commit -m "feat(ui): initialize Vite React TypeScript project..."
+[ui/ui-001-shell 53cab7a] 33 files changed, 5609 insertions(+), 194 deletions(-)
+
+$ git push -u origin ui/ui-001-shell
+* [new branch] ui/ui-001-shell -> ui/ui-001-shell
+
+$ gh pr create --base main --head ui/ui-001-shell
+https://github.com/Nilhan-DeMel/Score_Leads/pull/2
+
+$ gh pr merge 2 --merge --admin
+✓ Merged pull request #2
+
+$ git checkout main && git pull origin main
+Fast-forward to 2d8c697
+```
