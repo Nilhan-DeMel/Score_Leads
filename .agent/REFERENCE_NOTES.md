@@ -1,13 +1,13 @@
 # Reference Notes — MCP-Grounded (Step 1)
 
-> Generated: 2026-02-12 via `google-developer-knowledge` MCP server  
+> Generated: 2026-02-12 via `google-developer-knowledge` MCP server
 > These are authoritative takeaways used to inform the Score_Leads scaffold.
 
 ---
 
 ## 1. GitHub Flow + Protected Branches + Required Status Checks
 
-**Source:** Google Cloud Secure Source Manager docs  
+**Source:** Google Cloud Secure Source Manager docs
 **Ref:** `docs.cloud.google.com/secure-source-manager/docs/configure-branch-protection`
 
 ### Key Takeaways
@@ -28,7 +28,7 @@
 
 ## 2. Dev Containers (`devcontainer.json`) Basics
 
-**Source:** Google Cloud Code + VS Code Dev Containers docs  
+**Source:** Google Cloud Code + VS Code Dev Containers docs
 **Ref:** `docs.cloud.google.com/code/docs/vscode/develop-k8s-remote-dev`
 
 ### Key Takeaways
@@ -51,7 +51,7 @@
 
 ## 3. VS Code Extension Runtime Security / Extension Trust
 
-**Source:** Chrome Extensions Security docs (analogous principles) + VS Code trust model  
+**Source:** Chrome Extensions Security docs (analogous principles) + VS Code trust model
 **Ref:** `developer.chrome.com/docs/extensions/develop/security-privacy/stay-secure`
 
 ### Key Takeaways
@@ -71,3 +71,41 @@
 - `.vscode/extensions.json` contains ONLY recommended (not required) extensions from the allowlist.
 - Any new extension must be reviewed for publisher trust, permissions, and necessity before being added.
 - Treat every extension as a potential supply-chain risk — document why each is approved.
+
+---
+
+## 4. UI-001: Vite + React + TypeScript + Tailwind + Motion
+
+**Generated:** 2026-02-12 via `google-developer-knowledge` MCP + general knowledge
+**Prompt:** AG_Prompt_02
+
+### Vite React TypeScript
+
+- **Scaffold:** `npx create-vite@latest --template react-ts --no-interactive`
+- **Vite 7.x** uses Rollup by default; experimental Rolldown available via `--rolldown`
+- **React 19** with `@vitejs/plugin-react` for Fast Refresh
+- **Path aliases:** configure in `vite.config.ts` via `resolve.alias` + in `tsconfig.app.json` via `paths`
+
+### Tailwind CSS v4 (Vite)
+
+- **Tailwind v4** uses the new `@tailwindcss/vite` plugin — no PostCSS config needed
+- Install: `npm install tailwindcss @tailwindcss/vite`
+- Add `tailwindcss()` to `vite.config.ts` plugins array
+- Use `@import "tailwindcss"` in CSS entry file (replaces `@tailwind base/components/utilities`)
+- Use `@theme {}` block for custom design tokens — they become Tailwind utilities automatically
+- No `tailwind.config.js` needed — configuration is done in CSS with `@theme`
+
+### Motion (Framer Motion)
+
+- **Motion v12** — the pure standalone package (replaces `framer-motion`)
+- Install: `npm install motion`
+- Import from `motion/react` (not `framer-motion`)
+- `AnimatePresence` for exit animations on route changes
+- `motion.div` components for enter/exit/layout animations
+- `Variants` type for reusable animation presets
+
+### shadcn/ui (Not Used)
+
+- Evaluated but not installed in UI-001 to keep the dependency surface small
+- Can be added later via `npx shadcn@latest init` if needed
+- Requires Tailwind CSS configured first (which is done)
