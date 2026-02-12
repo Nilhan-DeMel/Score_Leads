@@ -1,0 +1,20 @@
+{
+  "prompt_id": "AG_Prompt_XX",
+  "branch": "feat/your-branch-name",
+  "commit": "abc1234",
+  "pr_url": "https://github.com/owner/Score_Leads/pull/XX",
+  "summary": "Brief description of what this task accomplished.",
+  "files_changed": ["path/to/file1.ts", "path/to/file2.md"],
+  "commands_run": ["npm test", "npm run lint"],
+  "tests_run": [
+    {
+      "name": "Test suite name",
+      "result": "pass|fail|skipped",
+      "notes": "Any relevant notes"
+    }
+  ],
+  "risks": ["Description of any risks introduced"],
+  "rollback": "How to undo these changes (e.g., git revert <commit>)",
+  "deviations": ["Any deviations from policy + justification"],
+  "timestamp": "YYYY-MM-DDTHH:MM:SS+05:30"
+}

@@ -1,0 +1,19 @@
+# Trajectory Log — Evidence Pack Template
+# Step-by-step record of agent actions (tool calls, diffs, outputs)
+# This log enables replay and audit of agent work.
+
+# Format:
+# [STEP N] <timestamp>
+# Action: <what the agent did>
+# Tool: <tool name> (if applicable)
+# Input: <tool input summary>
+# Output: <tool output summary>
+# ---
+
+# Example:
+# [STEP 1] 2026-02-12T12:15:00+05:30
+# Action: Read Project_Context.md
+# Tool: view_file
+# Input: D:\AI-Apps-In-Drive\App_Station\Score_Leads\Project_Context.md
+# Output: 272 lines, product spec + operating charter
+# ---
