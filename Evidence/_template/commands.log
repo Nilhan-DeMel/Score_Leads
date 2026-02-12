@@ -1,0 +1,13 @@
+# Commands Log — Evidence Pack Template
+# Record all commands run during this task, with outputs (trimmed to relevant sections)
+
+# Format:
+# $ <command>
+# <output>
+# ---
+
+# Example:
+# $ npm test
+# PASS  tests/scoring.test.ts
+# Tests: 5 passed, 5 total
+# ---

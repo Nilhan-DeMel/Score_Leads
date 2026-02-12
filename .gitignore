@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+.next/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Cache
+.cache/
+.turbo/
+.parcel-cache/
+
+# Logs (but keep Evidence logs)
+*.log
+!Evidence/**/*.log
+!Evidence/_template/*.log
+
+# Temp
+tmp/
+temp/

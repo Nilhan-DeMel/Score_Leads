@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "usernamehw.errorlens",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "streetsidesoftware.code-spell-checker",
+    "gruntfuggly.todo-tree"
+  ],
+  "unwantedRecommendations": []
+}

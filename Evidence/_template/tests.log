@@ -1,0 +1,13 @@
+# Tests Log — Evidence Pack Template
+# Record all test results from this task
+
+# Format:
+# Test Suite: <name>
+# Result: PASS | FAIL | SKIPPED
+# Details: <relevant output>
+# ---
+
+# If no tests are available yet:
+# Tests: NOT AVAILABLE
+# Reason: <why tests aren't available>
+# Plan: <when/how tests will be added>
