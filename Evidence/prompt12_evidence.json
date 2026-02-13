@@ -1,0 +1,12 @@
+{
+  "prompt_id": "12",
+  "head_commit": "e284bf7",
+  "deployed_yesno": "NO",
+  "prod_urls": [
+    "https://score-leads.vercel.app",
+    "https://score-leads.firebaseapp.com",
+    "https://score-leads.web.app"
+  ],
+  "tag_status": "MISSING",
+  "release_status": "MISSING"
+}

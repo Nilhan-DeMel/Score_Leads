@@ -1,0 +1,23 @@
+{
+  "prompt_id": "16",
+  "verification_results": [
+    {
+      "url": "https://score-leads.vercel.app/",
+      "status": 200
+    },
+    {
+      "url": "https://score-leads.vercel.app/results",
+      "status": 200
+    },
+    {
+      "url": "https://score-leads.vercel.app/history",
+      "status": 200
+    },
+    {
+      "url": "https://score-leads-q47wd1bw8-nilhans-projects.vercel.app/",
+      "status": 401,
+      "note": "Deployment protection active on alias."
+    }
+  ],
+  "spa_rewrites_verified": true
+}

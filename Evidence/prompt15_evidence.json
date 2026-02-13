@@ -1,0 +1,8 @@
+{
+  "prompt_id": "15",
+  "deployed_yesno": "YES",
+  "lane": "Vercel Git",
+  "prod_url": "https://score-leads.vercel.app",
+  "git_link_ok": true,
+  "public_access_ok": true
+}

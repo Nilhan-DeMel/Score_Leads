@@ -1,0 +1,12 @@
+{
+  "prompt_id": "11",
+  "head_commit": "e284bf7",
+  "generated_files": [
+    "AG_Prompt_11_ContextSnapshot_20260212.md",
+    "Score_Leads_Context_Index.md",
+    "Score_Leads_Context_Full.md",
+    "prompt11_commands.log",
+    "prompt11_repo-map.md",
+    "prompt11_trajectory.log"
+  ]
+}

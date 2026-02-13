@@ -1,0 +1,6 @@
+{
+  "prompt_id": "14",
+  "deployed_yesno": "YES",
+  "lane": "Vercel CLI",
+  "prod_urls": ["https://score-leads.vercel.app"]
+}
