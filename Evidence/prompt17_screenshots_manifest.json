@@ -1,0 +1,64 @@
+{
+  "screenshots": [
+    {
+      "filename": "01_home_mobile.jpg",
+      "device": "iPhone 13",
+      "route": "/",
+      "shown": "Home landing UI"
+    },
+    {
+      "filename": "02_scoreleads_input_mobile.jpg",
+      "device": "iPhone 13",
+      "route": "/score",
+      "shown": "Lead input textarea with dummy text"
+    },
+    {
+      "filename": "03_results_overview_mobile.jpg",
+      "device": "iPhone 13",
+      "route": "/results",
+      "shown": "Categorized results list after scoring"
+    },
+    {
+      "filename": "04_results_scrolled_mobile.jpg",
+      "device": "iPhone 13",
+      "route": "/results",
+      "shown": "Scrolled results view"
+    },
+    {
+      "filename": "05_export_controls_mobile.jpg",
+      "device": "iPhone 13",
+      "route": "/results",
+      "shown": "Export header buttons (CSV/JSON)"
+    },
+    {
+      "filename": "06_history_list_mobile.jpg",
+      "device": "iPhone 13",
+      "route": "/history",
+      "shown": "Run history list"
+    },
+    {
+      "filename": "07_history_reopen_mobile.jpg",
+      "device": "iPhone 13",
+      "route": "/run/:id",
+      "shown": "Reopened historical run context"
+    },
+    {
+      "filename": "08_profile_builder_mobile.jpg",
+      "device": "iPhone 13",
+      "route": "/profile",
+      "shown": "ICP profile settings"
+    },
+    {
+      "filename": "09_profile_suggestions_mobile.jpg",
+      "device": "iPhone 13",
+      "route": "/profile",
+      "shown": "Keyword suggestions UI"
+    },
+    {
+      "filename": "10_desktop_overview.jpg",
+      "device": "Desktop 1280x800",
+      "route": "/score",
+      "shown": "Overall desktop layout"
+    }
+  ]
+}

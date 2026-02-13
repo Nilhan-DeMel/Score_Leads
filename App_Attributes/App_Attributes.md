@@ -21,7 +21,7 @@
 | INFRA-003   | Security Gates (CodeQL + Dependabot + Dependency Review)                | AG_Prompt_09 | 2026-02-12 | ✅ Complete |
 | RELEASE-001 | Launch-ready release hygiene (v0.1.0, changelog, launch checklist)      | AG_Prompt_10 | 2026-02-12 | ✅ Complete |
 
----
+---- [x] `UI-HOTFIX-002` (Restore CSS/Theme) — restored missing styles, Tailwind wiring, and dark mode baseline. (2026-02-13)
 
 ## RELEASE-001: Launch-Ready Operations
 

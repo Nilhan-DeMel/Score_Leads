@@ -38,3 +38,5 @@
 | UI-009      | UI Polish Pass     | 🟡 Medium | A11y + contrast + refined motion tokens    | Planned        |
 | CORE-007    | SaaS Mode          | 🔴 High   | Auth + teams + cloud storage integration   | Planned        |
 | CORE-008    | Shareable Runs     | 🟡 Medium | Unique run links with read-only views      | Planned        |
+| INFRA-006   | Custom Domains     | 🟡 Medium | Link score-leads.com + SSL redirects       | Planned        |
+| INFRA-007   | Analytics          | 🟢 Low    | PostHog/Sentry instrumentation             | Planned        |
