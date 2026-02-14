@@ -1,0 +1,20 @@
+{
+    "prompt_id":  30,
+    "branch":  "infra/codex-kilo-stateless-ops-001",
+    "pr":  "PENDING",
+    "commit":  "e35b357",
+    "merge_commit":  "PENDING",
+    "timestamp_utc":  "2026-02-14T06:47:37.5554605Z",
+    "evidence_zip":  "Evidence/PROMPT#30.zip",
+    "verification":  {
+                         "npm_ci":  "pass",
+                         "npm_test":  "pass",
+                         "npm_build":  "pass",
+                         "npm_e2e":  "pass",
+                         "npm_preflight":  "pass"
+                     },
+    "notes":  [
+                  "Cloud account rule enforced: nilhan@gmail.com only",
+                  "No product feature changes in mission scope"
+              ]
+}

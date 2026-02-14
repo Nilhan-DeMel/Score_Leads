@@ -1,0 +1,62 @@
+diff --git a/App_Attributes/App_Attributes.md b/App_Attributes/App_Attributes.md
+index d7e2cb4..0d37945 100644
+--- a/App_Attributes/App_Attributes.md
++++ b/App_Attributes/App_Attributes.md
+@@ -20,6 +20,7 @@
+ | DEPLOY-001  | Hosting Lane Docs + Firebase/Vercel Configs + Preview Workflows         | AG_Prompt_08 | 2026-02-12 | ✅ Complete |
+ | INFRA-003   | Security Gates (CodeQL + Dependabot + Dependency Review)                | AG_Prompt_09 | 2026-02-12 | ✅ Complete |
+ | RELEASE-001 | Launch-ready release hygiene (v0.1.0, changelog, launch checklist)      | AG_Prompt_10 | 2026-02-12 | ✅ Complete |
++| INFRA-008   | STATLESS OPS HARDENING v1 (AGENTS.md + Kilo rules + preflight)          | AG_Prompt_30 | 2026-02-14 | ✅ Complete |
+ 
+ ---- [x] `UI-HOTFIX-002` (Restore CSS/Theme) — restored missing styles, Tailwind wiring, and dark mode baseline. (2026-02-13)
+ 
+diff --git a/App_Attributes/Potential_App_Attributes.md b/App_Attributes/Potential_App_Attributes.md
+index 302cced..dfa7791 100644
+--- a/App_Attributes/Potential_App_Attributes.md
++++ b/App_Attributes/Potential_App_Attributes.md
+@@ -27,16 +27,18 @@
+ 
+ ## Infrastructure
+ 
+-| ID          | Feature            | Priority  | Description                                | Status         |
+-| ----------- | ------------------ | --------- | ------------------------------------------ | -------------- |
+-| INFRA-001   | Testing Framework  | 🔴 High   | Vitest setup with component and unit tests | ✅ Implemented |
+-| INFRA-002   | Playwright E2E     | 🟢 Low    | End-to-end browser tests                   | ✅ Implemented |
+-| INFRA-003   | Code Scanning      | 🟡 Medium | CodeQL + dependency auditing               | ✅ Implemented |
+-| INFRA-004   | SBOM Generation    | 🟢 Low    | Auto-generate Software Bill of Materials   | Planned        |
+-| INFRA-005   | Secret Scanning +  | 🟡 Medium | Advanced secret scanning enhancements      | Planned        |
+-| RELEASE-001 | Release Automation | 🟢 Low    | v0.1.0 + changelog + launch checklist      | ✅ Implemented |
+-| UI-009      | UI Polish Pass     | 🟡 Medium | A11y + contrast + refined motion tokens    | Planned        |
+-| CORE-007    | SaaS Mode          | 🔴 High   | Auth + teams + cloud storage integration   | Planned        |
+-| CORE-008    | Shareable Runs     | 🟡 Medium | Unique run links with read-only views      | Planned        |
+-| INFRA-006   | Custom Domains     | 🟡 Medium | Link score-leads.com + SSL redirects       | Planned        |
+-| INFRA-007   | Analytics          | 🟢 Low    | PostHog/Sentry instrumentation             | Planned        |
++| ID          | Feature                                                             | Priority  | Description                                                               | Status         |
++| ----------- | ------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------- | -------------- |
++| INFRA-001   | Testing Framework                                                   | 🔴 High   | Vitest setup with component and unit tests                                | ✅ Implemented |
++| INFRA-002   | Playwright E2E                                                      | 🟢 Low    | End-to-end browser tests                                                  | ✅ Implemented |
++| INFRA-003   | Code Scanning                                                       | 🟡 Medium | CodeQL + dependency auditing                                              | ✅ Implemented |
++| INFRA-004   | SBOM Generation                                                     | 🟢 Low    | Auto-generate Software Bill of Materials                                  | Planned        |
++| INFRA-005   | Secret Scanning +                                                   | 🟡 Medium | Advanced secret scanning enhancements                                     | Planned        |
++| RELEASE-001 | Release Automation                                                  | 🟢 Low    | v0.1.0 + changelog + launch checklist                                     | ✅ Implemented |
++| UI-009      | UI Polish Pass                                                      | 🟡 Medium | A11y + contrast + refined motion tokens                                   | Planned        |
++| CORE-007    | SaaS Mode                                                           | 🔴 High   | Auth + teams + cloud storage integration                                  | Planned        |
++| CORE-008    | Shareable Runs                                                      | 🟡 Medium | Unique run links with read-only views                                     | Planned        |
++| INFRA-006   | Custom Domains                                                      | 🟡 Medium | Link score-leads.com + SSL redirects                                      | Planned        |
++| INFRA-007   | Analytics                                                           | 🟢 Low    | PostHog/Sentry instrumentation                                            | Planned        |
++| INFRA-008   | Automated Evidence Pack linter (checks required files exist in zip) | 🟡 Medium | Validate evidence zip structure against required artifact checklist       | Planned        |
++| INFRA-009   | CI check to confirm AGENTS.md + Kilo rules exist                    | 🟡 Medium | Enforce presence of root AGENTS.md and repo-scoped Kilo rules files in CI | Planned        |
+diff --git a/package.json b/package.json
+index e3b3141..4166e1b 100644
+--- a/package.json
++++ b/package.json
+@@ -13,7 +13,8 @@
+     "test:watch": "vitest",
+     "e2e": "playwright test",
+     "e2e:ui": "playwright test --ui",
+-    "repo-map": "node scripts/generate_repo_map.cjs"
++    "repo-map": "node scripts/generate_repo_map.cjs",
++    "preflight": "node scripts/preflight.mjs"
+   },
+   "dependencies": {
+     "localforage": "^1.10.0",

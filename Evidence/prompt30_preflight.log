@@ -1,0 +1,30 @@
+### Prompt30 Step0 Preflight 2026-02-14T12:09:41.9811372+05:30
+## git status
+On branch gov/audit-gov-001
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Evidence/AG_TaskRubric_30.md
+	Evidence/PROMPT#29.zip
+	Evidence/devserver_21.log
+	Evidence/prompt29_attempt1_fs_prompt27.txt
+	Evidence/prompt29_attempt3_zip_scan.txt
+	Evidence/prompt29_branch.txt
+	Evidence/prompt29_commands.log
+	Evidence/prompt29_git_status_after.txt
+	Evidence/prompt29_status_now.txt
+	Evidence/prompt29_zip_listing.txt
+	Evidence/prompt30_find_prompt27.log
+	Evidence/prompt30_machine_search_prompt27.log
+	Evidence/prompt30_preflight.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+`n## tool versions
+node: v22.15.0
+npm: 10.9.2
+git: git version 2.52.0.windows.1
+playwright(lockfile): not present
+`n## package manager detection
+npm (package-lock.json detected)
+`n## dirty tree guidance
+Working tree NOT clean. Safe options: 1) commit existing work 2) git stash push -u 3) save patch + reset (risky).
+playwright(package.json): ^1.58.2
