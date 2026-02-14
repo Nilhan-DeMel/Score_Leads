@@ -1,0 +1,31 @@
+### Prompt30 Command Log (consolidated)
+
+## Step 0 Preflight Capture
+- git status
+- node -v
+- npm -v
+- git --version
+- Playwright version check from package-lock.json + package.json
+- package manager detection => npm (package-lock.json)
+
+## Branch Discipline
+- git switch -c infra/codex-kilo-stateless-ops-001
+
+## Verification Commands (executed)
+- npm ci
+- npm test
+- npm run build
+- npm run e2e
+- npm run preflight
+
+## Evidence/Git/PR Commands (executed or queued)
+- git diff -- . > Evidence/prompt30_patch.diff
+- git add <scoped files>
+- git commit -m <message> (small logical commits)
+- git push -u origin infra/codex-kilo-stateless-ops-001
+- gh pr create --base main --head infra/codex-kilo-stateless-ops-001 ...
+- gh pr merge <PR> --merge --delete-branch=false
+
+## Full Raw Outputs
+- Evidence/prompt30_tests.log
+- Evidence/prompt30_preflight.log

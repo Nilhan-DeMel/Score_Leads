@@ -27,16 +27,18 @@
 
 ## Infrastructure
 
-| ID          | Feature            | Priority  | Description                                | Status         |
-| ----------- | ------------------ | --------- | ------------------------------------------ | -------------- |
-| INFRA-001   | Testing Framework  | 🔴 High   | Vitest setup with component and unit tests | ✅ Implemented |
-| INFRA-002   | Playwright E2E     | 🟢 Low    | End-to-end browser tests                   | ✅ Implemented |
-| INFRA-003   | Code Scanning      | 🟡 Medium | CodeQL + dependency auditing               | ✅ Implemented |
-| INFRA-004   | SBOM Generation    | 🟢 Low    | Auto-generate Software Bill of Materials   | Planned        |
-| INFRA-005   | Secret Scanning +  | 🟡 Medium | Advanced secret scanning enhancements      | Planned        |
-| RELEASE-001 | Release Automation | 🟢 Low    | v0.1.0 + changelog + launch checklist      | ✅ Implemented |
-| UI-009      | UI Polish Pass     | 🟡 Medium | A11y + contrast + refined motion tokens    | Planned        |
-| CORE-007    | SaaS Mode          | 🔴 High   | Auth + teams + cloud storage integration   | Planned        |
-| CORE-008    | Shareable Runs     | 🟡 Medium | Unique run links with read-only views      | Planned        |
-| INFRA-006   | Custom Domains     | 🟡 Medium | Link score-leads.com + SSL redirects       | Planned        |
-| INFRA-007   | Analytics          | 🟢 Low    | PostHog/Sentry instrumentation             | Planned        |
+| ID          | Feature                                                             | Priority  | Description                                                               | Status         |
+| ----------- | ------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------- | -------------- |
+| INFRA-001   | Testing Framework                                                   | 🔴 High   | Vitest setup with component and unit tests                                | ✅ Implemented |
+| INFRA-002   | Playwright E2E                                                      | 🟢 Low    | End-to-end browser tests                                                  | ✅ Implemented |
+| INFRA-003   | Code Scanning                                                       | 🟡 Medium | CodeQL + dependency auditing                                              | ✅ Implemented |
+| INFRA-004   | SBOM Generation                                                     | 🟢 Low    | Auto-generate Software Bill of Materials                                  | Planned        |
+| INFRA-005   | Secret Scanning +                                                   | 🟡 Medium | Advanced secret scanning enhancements                                     | Planned        |
+| RELEASE-001 | Release Automation                                                  | 🟢 Low    | v0.1.0 + changelog + launch checklist                                     | ✅ Implemented |
+| UI-009      | UI Polish Pass                                                      | 🟡 Medium | A11y + contrast + refined motion tokens                                   | Planned        |
+| CORE-007    | SaaS Mode                                                           | 🔴 High   | Auth + teams + cloud storage integration                                  | Planned        |
+| CORE-008    | Shareable Runs                                                      | 🟡 Medium | Unique run links with read-only views                                     | Planned        |
+| INFRA-006   | Custom Domains                                                      | 🟡 Medium | Link score-leads.com + SSL redirects                                      | Planned        |
+| INFRA-007   | Analytics                                                           | 🟢 Low    | PostHog/Sentry instrumentation                                            | Planned        |
+| INFRA-008   | Automated Evidence Pack linter (checks required files exist in zip) | 🟡 Medium | Validate evidence zip structure against required artifact checklist       | Planned        |
+| INFRA-009   | CI check to confirm AGENTS.md + Kilo rules exist                    | 🟡 Medium | Enforce presence of root AGENTS.md and repo-scoped Kilo rules files in CI | Planned        |
