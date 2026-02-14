@@ -13,7 +13,8 @@
     "test:watch": "vitest",
     "e2e": "playwright test",
     "e2e:ui": "playwright test --ui",
-    "repo-map": "node scripts/generate_repo_map.cjs"
+    "repo-map": "node scripts/generate_repo_map.cjs",
+    "preflight": "node scripts/preflight.mjs"
   },
   "dependencies": {
     "localforage": "^1.10.0",
