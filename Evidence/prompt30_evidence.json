@@ -1,10 +1,10 @@
 {
     "prompt_id":  30,
     "branch":  "infra/codex-kilo-stateless-ops-001",
-    "pr":  "PENDING",
-    "commit":  "e35b357",
-    "merge_commit":  "PENDING",
-    "timestamp_utc":  "2026-02-14T06:47:37.5554605Z",
+    "pr":  "https://github.com/Nilhan-DeMel/Score_Leads/pull/15",
+    "commit":  "5631969",
+    "merge_commit":  "787de0e59e3c3734fe0ecf490c5b81700f774823",
+    "timestamp_utc":  "2026-02-14T06:54:15.0626239Z",
     "evidence_zip":  "Evidence/PROMPT#30.zip",
     "verification":  {
                          "npm_ci":  "pass",
