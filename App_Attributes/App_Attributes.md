@@ -21,8 +21,18 @@
 | INFRA-003   | Security Gates (CodeQL + Dependabot + Dependency Review)                | AG_Prompt_09 | 2026-02-12 | ✅ Complete |
 | RELEASE-001 | Launch-ready release hygiene (v0.1.0, changelog, launch checklist)      | AG_Prompt_10 | 2026-02-12 | ✅ Complete |
 | INFRA-008   | STATLESS OPS HARDENING v1 (AGENTS.md + Kilo rules + preflight)          | AG_Prompt_30 | 2026-02-14 | ✅ Complete |
+| RELEASE-002 | Employer release hardening, typed import bridge, and current docs       | AG_Prompt_31 | 2026-07-15 | ✅ Complete |
 
 ---- [x] `UI-HOTFIX-002` (Restore CSS/Theme) — restored missing styles, Tailwind wiring, and dark mode baseline. (2026-02-13)
+
+## RELEASE-002: Employer Release Hardening
+
+- Replaced generic portfolio copy with an architecture- and evidence-led README.
+- Removed stale onboarding and repository-map claims.
+- Replaced unsafe `any` boundaries with typed export, import, storage-test, and icon contracts.
+- Added canonical conversion from permissive CSV/list rows into `LeadCompanyProfile`.
+- Corrected asynchronous history loading so the React lint gate passes.
+- Re-verified ESLint, all 18 Vitest tests, and the production build.
 
 ## RELEASE-001: Launch-Ready Operations
 

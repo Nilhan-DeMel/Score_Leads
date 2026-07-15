@@ -18,11 +18,11 @@
 
 ## UI/UX
 
-| ID     | Feature             | Priority  | Description                                                             |
+| ID     | Feature             | Priority  | Description                                                             | Status         |
 | ------ | ------------------- | --------- | ----------------------------------------------------------------------- | -------------- |
 | UI-002 | Results Detail View | 🔴 High   | Expanded view per lead with evidence, score breakdown, and risk signals | ✅ Implemented |
 | UI-003 | Profile Wizard      | 🟡 Medium | Guided onboarding for profile creation                                  | Planned        |
-| UI-004 | Export Results      | 🟡 Medium | Download scored results as CSV, JSON, or markdown                       | Planned        |
+| UI-004 | Export Results      | 🟡 Medium | Download scored results as CSV or JSON                                  | ✅ Implemented |
 | UI-007 | Toast Notifications | 🟡 Medium | Success/error/info toasts via Framer Motion                             | ✅ Implemented |
 
 ## Infrastructure

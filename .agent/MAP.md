@@ -27,20 +27,17 @@
 | **Routing**                           | React Router v7 (`src/App.tsx`)               | ✅ Active |
 | **Deployment (Vercel)**               | `vercel.json`, `.agent/DEPLOY.md`             | ✅ Active |
 | **Deployment (Firebase)**             | `firebase.json`, `.firebaserc`, `.github/`    | ✅ Active |
+| **Lead Parser and Normalizer**         | `src/core/leads/`                             | ✅ Active |
+| **CSV and List Import**                | `src/core/import/`                            | ✅ Active |
+| **Deterministic Scoring Engine**       | `src/core/scoring/`                           | ✅ Active |
+| **Profile and Run Persistence**        | `src/core/profile/`, `src/core/runs/`         | ✅ Active |
+| **Unit and Browser Tests**             | `src/**/__tests__/`, `e2e/`                   | ✅ Active |
 
 ---
 
-## Planned (Not Yet Created)
+## Deliberate extension points
 
-| Feature / Module    | Expected Location                     | Priority  |
-| ------------------- | ------------------------------------- | --------- |
-| Lead Parser         | `src/core/parser/`                    | 🔴 High   |
-| Lead Normalizer     | `src/core/normalizer/`                | 🔴 High   |
-| Scoring Engine      | `src/core/scoring/`                   | 🔴 High   |
-| Evidence Extraction | `src/core/evidence/`                  | 🟡 Medium |
-| Tests               | `src/__tests__/` + `vitest.config.ts` | 🔴 High   |
-| API Layer           | `src/core/api/`                       | 🟡 Medium |
-| State Management    | `src/core/store/`                     | 🟡 Medium |
+The current system is local-first and deterministic. Future work can add evidence enrichment, organization APIs, or a shared state layer without changing the canonical parsing and scoring contracts.
 
 ---
 

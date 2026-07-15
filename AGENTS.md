@@ -44,6 +44,6 @@ Agents MUST NOT mix unrelated work in the same branch or PR.
 
 When any cloud/google/firebase/vercel authentication or resource interaction is required, agents MUST use only:
 
-- `nilhan@gmail.com`
+- `repository-owner@example.test`
 
 Agents MUST NOT use or create any other Google account session for this repository.
