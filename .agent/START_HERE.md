@@ -39,11 +39,11 @@ See `.agent/MAP.md` for the full feature → folder mapping.
 
 ## How to Run
 
-> **Note:** The app is in early initialization. No runnable code yet. When ready:
+The application is runnable and its package scripts are the source of truth:
 
 ```bash
 # 1. Clone and install
-npm install
+npm ci
 
 # 2. Run dev server
 npm run dev
@@ -51,8 +51,8 @@ npm run dev
 # 3. Run tests
 npm test
 
-# 4. Generate repo map
-python scripts/generate_repo_map.py
+# 4. Generate the repository map
+npm run repo-map
 ```
 
 **Dev Container:** Open in VS Code → "Reopen in Container" → everything is ready.

@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import type { ComponentType } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import { PageTransition } from "../motion/PageTransition";
@@ -13,11 +14,19 @@ import { loadProfile } from "../../core/profile/storage/loadProfile";
 import { saveRun } from "../../core/runs/storage/saveRun";
 import { parseCsvToLeads } from "../../core/import/parseCsvToLeads";
 import { parseListToLeads } from "../../core/import/parseListToLeads";
+import { toLeadCompanyProfile } from "../../core/import/toLeadCompanyProfile";
 import type { Run } from "../../core/runs/types";
+import type { ImportedLead } from "../../core/import/types";
+import type { LeadCompanyProfile } from "../../core/leads/types";
 
 type InputMode = "text" | "csv_paste" | "csv_upload" | "list";
 
-const modes: { key: InputMode; label: string; desc: string; icon: any }[] = [
+const modes: {
+  key: InputMode;
+  label: string;
+  desc: string;
+  icon: ComponentType<{ size?: number; className?: string }>;
+}[] = [
   { key: "text", label: "Text", desc: "Messy paste", icon: SparkleIcon },
   { key: "csv_paste", label: "CSV", desc: "Paste CSV", icon: FileIcon },
   { key: "csv_upload", label: "Upload", desc: ".csv file", icon: FileIcon },
@@ -31,7 +40,7 @@ export function LeadInputPage() {
   const [input, setInput] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
   const [importResults, setImportResults] = useState<{
-    leads: any[];
+    leads: ImportedLead[];
     warnings: string[];
   } | null>(null);
 
@@ -41,7 +50,7 @@ export function LeadInputPage() {
     setIsProcessing(true);
 
     try {
-      let leadsToScore: any[] = [];
+      let leadsToScore: LeadCompanyProfile[] = [];
       let inputKind: Run["inputMeta"]["kind"] = "text";
 
       if (mode === "text") {
@@ -50,23 +59,15 @@ export function LeadInputPage() {
         inputKind = "text";
       } else if (mode === "csv_paste" || mode === "csv_upload") {
         const parsed = parseCsvToLeads(input);
-        leadsToScore = parsed.leads.map((l) => ({
-          ...l,
-          source_text: l.text,
-          confidence: 1.0,
-          id: crypto.randomUUID(),
-          method: "BATCH" as any,
-        }));
+        leadsToScore = parsed.leads
+          .map(toLeadCompanyProfile)
+          .filter((lead): lead is LeadCompanyProfile => lead !== null);
         inputKind = "csv";
       } else if (mode === "list") {
         const parsed = parseListToLeads(input);
-        leadsToScore = parsed.leads.map((l) => ({
-          ...l,
-          source_text: l.text,
-          confidence: 1.0,
-          id: crypto.randomUUID(),
-          method: "BARE" as any,
-        }));
+        leadsToScore = parsed.leads
+          .map(toLeadCompanyProfile)
+          .filter((lead): lead is LeadCompanyProfile => lead !== null);
         inputKind = "list";
       }
 
@@ -81,7 +82,7 @@ export function LeadInputPage() {
           lead,
           defaultScoringConfig,
           activeProfile,
-          lead.source_text || lead.text,
+          lead.source_text,
         ),
       }));
 

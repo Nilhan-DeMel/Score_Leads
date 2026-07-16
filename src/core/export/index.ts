@@ -4,7 +4,10 @@ import { logger } from "../logging/logger";
 /**
  * Exports data to a CSV file.
  */
-export function exportToCsv(data: any[], filename: string) {
+export function exportToCsv(
+  data: Array<Record<string, unknown>>,
+  filename: string,
+): void {
   try {
     const csv = Papa.unparse(data);
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
@@ -28,7 +31,7 @@ export function exportToCsv(data: any[], filename: string) {
 /**
  * Exports data to a JSON file.
  */
-export function exportToJson(data: any, filename: string) {
+export function exportToJson(data: unknown, filename: string): void {
   try {
     const json = JSON.stringify(data, null, 2);
     const blob = new Blob([json], { type: "application/json" });

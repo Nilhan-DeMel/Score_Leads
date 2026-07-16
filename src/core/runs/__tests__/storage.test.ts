@@ -4,13 +4,14 @@ import { getRun } from "../storage/getRun";
 import { listRuns } from "../storage/listRuns";
 import localforage from "localforage";
 import type { Run } from "../types";
+import { defaultProfile } from "../../profile/defaultProfile";
 
 // Mock localforage
 vi.mock("localforage", () => {
-  const store: Record<string, any> = {};
+  const store: Record<string, unknown> = {};
   return {
     default: {
-      setItem: vi.fn(async (key: string, value: any) => {
+      setItem: vi.fn(async (key: string, value: unknown) => {
         store[key] = value;
       }),
       getItem: vi.fn(async (key: string) => {
@@ -30,7 +31,7 @@ describe("Run Storage", () => {
     runId: "run-123",
     createdAt: new Date().toISOString(),
     name: "Test Run",
-    profileSnapshot: {} as any,
+    profileSnapshot: defaultProfile,
     inputMeta: { kind: "text", leadCount: 1, rawSize: 10, warningsCount: 0 },
     leads: [],
   };

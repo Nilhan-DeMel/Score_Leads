@@ -36,7 +36,7 @@
 - [ ] Include single source-of-truth commands: install/dev/test/build/e2e.
 - [ ] Include evidence pack rule: always produce `Evidence/PROMPT#NN.zip` with required contents.
 - [ ] Include git workflow rule: one feature per branch + PR merge gates.
-- [ ] Include cloud account rule: `nilhan@gmail.com` only.
+- [ ] Include cloud account rule: `repository-owner@example.test` only.
 
 ### 5) Persistent instruction layer 2 (Kilo custom rules)
 
@@ -101,7 +101,7 @@
 
 ### 11) Cloud account constraint
 
-- [ ] If any cloud/google/firebase/vercel interaction occurs, use ONLY `nilhan@gmail.com` session.
+- [ ] If any cloud/google/firebase/vercel interaction occurs, use ONLY `repository-owner@example.test` session.
 
 ## Completion Gate
 
@@ -112,4 +112,4 @@
   - [ ] merge commit hash
   - [ ] evidence paths including `Evidence/PROMPT#30.zip` and exact size
   - [ ] exact preflight/test/build/e2e commands
-  - [ ] explicit statement: cloud account rule enforced: `nilhan@gmail.com` only
+  - [ ] explicit statement: cloud account rule enforced: `repository-owner@example.test` only

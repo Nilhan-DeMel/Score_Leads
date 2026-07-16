@@ -14,7 +14,7 @@
                          "npm_preflight":  "pass"
                      },
     "notes":  [
-                  "Cloud account rule enforced: nilhan@gmail.com only",
+                  "Cloud account rule enforced: repository-owner@example.test only",
                   "No product feature changes in mission scope"
               ]
 }

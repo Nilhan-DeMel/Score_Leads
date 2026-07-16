@@ -49,4 +49,4 @@
 
 ## Cloud Account Rule
 
-- Enforced: `nilhan@gmail.com` only.
+- Enforced: `repository-owner@example.test` only.

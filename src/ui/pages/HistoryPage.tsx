@@ -14,21 +14,29 @@ export function HistoryPage() {
   const [runs, setRuns] = useState<Partial<Run>[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const loadRuns = async () => {
-    const data = await listRuns();
-    setRuns(data);
-    setLoading(false);
-  };
-
   useEffect(() => {
-    loadRuns();
+    let cancelled = false;
+
+    const loadInitialRuns = async () => {
+      const data = await listRuns();
+      if (!cancelled) {
+        setRuns(data);
+        setLoading(false);
+      }
+    };
+
+    void loadInitialRuns();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const handleDelete = async (e: React.MouseEvent, id: string) => {
     e.stopPropagation();
     if (window.confirm("Delete this run from history?")) {
       await deleteRun(id);
-      loadRuns();
+      setRuns(await listRuns());
     }
   };
 
