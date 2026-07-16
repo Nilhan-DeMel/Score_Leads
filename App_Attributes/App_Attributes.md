@@ -159,3 +159,13 @@
 - LocalStorage persistence layer with Import/Export (JSON)
 - Profile-driven scoring signals (Tech, Industry, Region, Hard Negatives)
 - UI: Profile Builder with tag editing and offline keyword suggestions
+
+---
+
+## PORTFOLIO-001: Public Engineering Evaluation Surface
+
+- Outcome-led README with a verified architecture and capability tour
+- Sanitized product screenshot and deterministic 1280×640 social preview
+- Explicit security-reporting, contribution, and rights boundaries
+- Portfolio-integrity workflow covering required documentation and changed-history secret scanning
+- No scoring behavior, runtime API, persistence schema, or deployment configuration changed

@@ -42,3 +42,4 @@
 | INFRA-007   | Analytics                                                           | 🟢 Low    | PostHog/Sentry instrumentation                                            | Planned        |
 | INFRA-008   | Automated Evidence Pack linter (checks required files exist in zip) | 🟡 Medium | Validate evidence zip structure against required artifact checklist       | Planned        |
 | INFRA-009   | CI check to confirm AGENTS.md + Kilo rules exist                    | 🟡 Medium | Enforce presence of root AGENTS.md and repo-scoped Kilo rules files in CI | Planned        |
+| PORTFOLIO-001 | Employer-facing repository surface                                | 🟡 Medium | Add truthful product evidence, social preview, contribution, security, and rights guidance | ✅ Implemented |
