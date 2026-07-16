@@ -1,5 +1,12 @@
 # Score Leads
 
+<!-- portfolio-flagship -->
+<p align="center"><img src="docs/social-preview.png" alt="Score Leads social preview" width="100%"></p>
+
+> **Portfolio review path:** Start with the capabilities and architecture below, then reproduce the documented verification commands. See [SECURITY.md](SECURITY.md), [CONTRIBUTING.md](CONTRIBUTING.md), and [RIGHTS.md](RIGHTS.md) for the project's operating and reuse boundaries.
+
+![Score Leads dark-theme product home](docs/screenshots/home.jpg)
+
 Deterministic, explainable lead scoring for turning messy prospect data into reviewable ICP-fit decisions.
 
 Score Leads is a mobile-first React application that accepts free-form text, lists, and CSV data; extracts and normalizes company signals; applies configurable scoring rules; and preserves each run for later review and export. The project is deliberately deterministic: every score is assembled from visible fit, intent, region, website, and exclusion signals rather than an opaque model response.
